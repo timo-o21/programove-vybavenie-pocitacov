@@ -1,1 +1,1 @@
-# pocitacove-siete
+# programové vybavenie počítačov

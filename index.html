@@ -3,23 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Počítačové siete – Školský projekt</title>
+<title>Programové vybavenie počítačov</title>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
     --accent: #1a6efc;
-    --accent2: #0f4db5;
     --bg: #f5f7ff;
     --card: #ffffff;
     --text: #111827;
     --muted: #6b7280;
     --border: #e0e7ff;
-    --green: #059669;
-    --green-bg: #d1fae5;
-    --orange: #d97706;
-    --orange-bg: #fef3c7;
     --blue-bg: #eff6ff;
     --radius: 14px;
   }
@@ -35,7 +30,7 @@
   header {
     background: linear-gradient(135deg, #0f2c6e 0%, #1a6efc 60%, #38bdf8 100%);
     color: white;
-    padding: 64px 24px 80px;
+    padding: 56px 24px 72px;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -60,24 +55,24 @@
   }
   header h1 {
     font-family: 'Syne', sans-serif;
-    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-size: clamp(1.8rem, 4vw, 3rem);
     font-weight: 800;
     letter-spacing: -0.02em;
     margin-bottom: 12px;
   }
   header p {
-    font-size: 1.1rem;
+    font-size: 1rem;
     opacity: 0.85;
     max-width: 520px;
     margin: 0 auto;
   }
 
-  nav {
+  /* TOP NAV - Témy */
+  .tema-nav {
     background: white;
     border-bottom: 1px solid var(--border);
-    padding: 0 24px;
+    padding: 0;
     display: flex;
-    gap: 4px;
     overflow-x: auto;
     justify-content: center;
     position: sticky;
@@ -85,9 +80,11 @@
     z-index: 100;
     box-shadow: 0 2px 8px rgba(0,0,0,0.06);
   }
-  nav a {
-    display: block;
-    padding: 14px 18px;
+  .tema-nav a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 22px;
     text-decoration: none;
     color: var(--muted);
     font-size: 14px;
@@ -96,18 +93,71 @@
     white-space: nowrap;
     transition: all 0.2s;
   }
-  nav a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+  .tema-nav a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+  .tema-nav a .num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--blue-bg);
+    color: var(--accent);
+    font-size: 11px;
+    font-weight: 700;
+    border: 1px solid #bfdbfe;
+  }
 
   main {
-    max-width: 860px;
+    max-width: 880px;
     margin: 0 auto;
     padding: 48px 24px 80px;
     display: flex;
     flex-direction: column;
-    gap: 48px;
+    gap: 64px;
   }
 
-  .task-label {
+  /* Téma blok */
+  .tema-block {
+    scroll-margin-top: 60px;
+  }
+  .tema-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 28px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid var(--border);
+  }
+  .tema-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #1a6efc, #38bdf8);
+    color: white;
+    font-family: 'Syne', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 800;
+    flex-shrink: 0;
+  }
+  .tema-header-text h2 {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #0f172a;
+    line-height: 1.2;
+  }
+  .tema-header-text p {
+    font-size: 0.88rem;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+
+  /* Úloha label */
+  .uloha-label {
     display: inline-flex;
     align-items: center;
     gap: 8px;
@@ -120,67 +170,63 @@
     border: 1px solid #bfdbfe;
     border-radius: 99px;
     padding: 5px 14px;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
   }
 
-  section h2 {
-    font-family: 'Syne', sans-serif;
-    font-size: 1.75rem;
-    font-weight: 800;
-    margin-bottom: 6px;
-    color: #0f172a;
-    line-height: 1.2;
+  .uloha-block {
+    margin-bottom: 32px;
+    scroll-margin-top: 60px;
   }
-  section .sub {
-    font-size: 0.95rem;
-    color: var(--muted);
-    margin-bottom: 24px;
-    border-bottom: 1px solid var(--border);
-    padding-bottom: 16px;
+  .uloha-block h3 {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 14px;
+  }
+
+  .definition-box {
+    background: linear-gradient(135deg, #eff6ff, #f0f9ff);
+    border-left: 4px solid var(--accent);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    padding: 18px 22px;
+    margin-bottom: 18px;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #1e3a5f;
   }
 
   .card {
     background: var(--card);
     border: 1px solid var(--border);
     border-radius: var(--radius);
-    padding: 24px 28px;
-    margin-bottom: 20px;
+    padding: 22px 26px;
+    margin-bottom: 16px;
   }
-  .card h3 {
-    font-size: 1.05rem;
+  .card h4 {
+    font-size: 1rem;
     font-weight: 600;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     color: #0f172a;
   }
   .card p {
     color: #374151;
     line-height: 1.75;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
   }
   .card p:last-child { margin-bottom: 0; }
 
-  .definition-box {
-    background: linear-gradient(135deg, #eff6ff, #f0f9ff);
-    border-left: 4px solid var(--accent);
-    border-radius: 0 var(--radius) var(--radius) 0;
-    padding: 20px 24px;
-    margin-bottom: 24px;
-    font-size: 1.05rem;
-    line-height: 1.7;
-    color: #1e3a5f;
-  }
-
   .components-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 14px;
-    margin-top: 16px;
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+    gap: 12px;
+    margin-top: 12px;
   }
   .comp-card {
     background: white;
     border: 1px solid var(--border);
     border-radius: 12px;
-    padding: 16px 18px;
+    padding: 14px 16px;
     display: flex;
     gap: 12px;
     align-items: flex-start;
@@ -191,125 +237,91 @@
     transform: translateY(-2px);
   }
   .comp-icon {
-    width: 38px;
-    height: 38px;
+    width: 36px;
+    height: 36px;
     border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 18px;
+    font-size: 17px;
     flex-shrink: 0;
   }
-  .icon-passive { background: var(--orange-bg); }
+  .icon-passive { background: #fef3c7; }
   .icon-active { background: #d1fae5; }
-  .comp-card .name {
-    font-weight: 600;
-    font-size: 0.92rem;
-    color: #111;
-    margin-bottom: 3px;
-  }
-  .comp-card .desc {
-    font-size: 0.82rem;
-    color: var(--muted);
-    line-height: 1.4;
-  }
+  .comp-card .name { font-weight: 600; font-size: 0.88rem; color: #111; margin-bottom: 2px; }
+  .comp-card .desc { font-size: 0.79rem; color: var(--muted); line-height: 1.4; }
 
-  .passive-grid { --icon-color: var(--orange); }
-  .active-grid { --icon-color: var(--green); }
-
-  /* Cable diagram */
-  .cable-section { margin-top: 12px; }
+  /* Cable tables */
   .cable-tables {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    margin-top: 20px;
+    gap: 16px;
+    margin-top: 16px;
   }
-  @media (max-width: 600px) {
-    .cable-tables { grid-template-columns: 1fr; }
+  @media (max-width: 600px) { .cable-tables { grid-template-columns: 1fr; } }
+  .cable-table-card { background: white; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+  .cable-header { padding: 11px 16px; font-weight: 700; font-size: 0.85rem; letter-spacing: 0.04em; text-transform: uppercase; display: flex; align-items: center; gap: 8px; }
+  .cable-header.a { background: #eff6ff; color: #1e3a5f; border-bottom: 1px solid #bfdbfe; }
+  .cable-header.b { background: #fdf4ff; color: #4a1d96; border-bottom: 1px solid #e9d5ff; }
+  table.pins { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+  table.pins th { background: #f8fafc; font-weight: 600; padding: 7px 12px; border-bottom: 1px solid var(--border); color: var(--muted); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; text-align: left; }
+  table.pins td { padding: 7px 12px; border-bottom: 1px solid #f1f5f9; vertical-align: middle; }
+  table.pins tr:last-child td { border-bottom: none; }
+  .wire-swatch { display: inline-block; width: 20px; height: 9px; border-radius: 3px; vertical-align: middle; margin-right: 7px; border: 1px solid rgba(0,0,0,0.12); }
+  .wire-label { vertical-align: middle; font-weight: 500; }
+  .pin-num { display: inline-flex; align-items: center; justify-content: center; width: 20px; height: 20px; border-radius: 50%; background: #f1f5f9; border: 1px solid #e2e8f0; font-size: 11px; font-weight: 600; color: #475569; }
+  .norm-badge { display: inline-block; font-size: 10px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; padding: 2px 8px; border-radius: 6px; margin-left: 6px; }
+  .norm-a { background: #dbeafe; color: #1e40af; }
+  .norm-b { background: #ede9fe; color: #4c1d95; }
+  .priamy-tag { display: inline-flex; align-items: center; gap: 6px; background: #d1fae5; color: #065f46; border-radius: 8px; padding: 4px 12px; font-size: 12px; font-weight: 600; border: 1px solid #6ee7b7; }
+  .krizeny-tag { display: inline-flex; align-items: center; gap: 6px; background: #fce7f3; color: #831843; border-radius: 8px; padding: 4px 12px; font-size: 12px; font-weight: 600; border: 1px solid #f9a8d4; }
+  .crossover-note { background: #fef3c7; border: 1px solid #fcd34d; border-radius: 10px; padding: 12px 16px; font-size: 0.86rem; color: #92400e; margin-top: 16px; display: flex; gap: 10px; align-items: flex-start; line-height: 1.6; }
+
+  /* Číselné sústavy */
+  .sustava-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 14px;
+    margin-top: 14px;
   }
-  .cable-table-card {
+  .sustava-card {
     background: white;
     border: 1px solid var(--border);
     border-radius: var(--radius);
-    overflow: hidden;
+    padding: 18px 20px;
+    transition: box-shadow 0.2s, transform 0.2s;
   }
-  .cable-header {
-    padding: 12px 18px;
-    font-weight: 700;
-    font-size: 0.9rem;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-  .cable-header.a { background: #eff6ff; color: #1e3a5f; border-bottom: 1px solid #bfdbfe; }
-  .cable-header.b { background: #fdf4ff; color: #4a1d96; border-bottom: 1px solid #e9d5ff; }
-
-  table.pins {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 0.88rem;
-  }
-  table.pins th {
-    background: #f8fafc;
-    font-weight: 600;
-    padding: 8px 14px;
-    border-bottom: 1px solid var(--border);
-    color: var(--muted);
-    font-size: 0.78rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    text-align: left;
-  }
-  table.pins td {
-    padding: 8px 14px;
-    border-bottom: 1px solid #f1f5f9;
-    vertical-align: middle;
-  }
-  table.pins tr:last-child td { border-bottom: none; }
-  .wire-swatch {
-    display: inline-block;
-    width: 22px;
-    height: 10px;
-    border-radius: 3px;
-    vertical-align: middle;
-    margin-right: 8px;
-    border: 1px solid rgba(0,0,0,0.12);
-  }
-  .wire-label {
-    vertical-align: middle;
-    font-weight: 500;
-  }
-
-  .crossover-note {
-    background: #fef3c7;
-    border: 1px solid #fcd34d;
-    border-radius: 10px;
-    padding: 14px 18px;
-    font-size: 0.88rem;
-    color: #92400e;
-    margin-top: 20px;
-    display: flex;
-    gap: 10px;
-    align-items: flex-start;
-    line-height: 1.6;
-  }
-  .crossover-note span.icon { font-size: 16px; }
-
-  .norm-badge {
+  .sustava-card:hover { box-shadow: 0 6px 20px rgba(26,110,252,0.1); transform: translateY(-2px); }
+  .sustava-card .s-badge {
     display: inline-block;
     font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
+    font-weight: 700;
     padding: 3px 10px;
-    border-radius: 6px;
-    margin-left: 8px;
+    border-radius: 99px;
+    margin-bottom: 10px;
   }
-  .norm-a { background: #dbeafe; color: #1e40af; }
-  .norm-b { background: #ede9fe; color: #4c1d95; }
+  .s-bin { background: #dbeafe; color: #1e40af; }
+  .s-dec { background: #dcfce7; color: #14532d; }
+  .s-hex { background: #fef3c7; color: #78350f; }
+  .sustava-card h4 { font-size: 1rem; font-weight: 700; color: #0f172a; margin-bottom: 6px; }
+  .sustava-card p { font-size: 0.85rem; color: #374151; line-height: 1.6; margin-bottom: 8px; }
+  .sustava-card .example { font-family: monospace; font-size: 0.9rem; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 6px 10px; color: #1e40af; }
+
+  /* IP adresy */
+  .ip-table-wrap { background: white; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; margin-top: 14px; }
+  table.ip { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+  table.ip th { background: #eff6ff; font-weight: 600; padding: 10px 16px; border-bottom: 1px solid var(--border); color: #1e3a5f; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; text-align: left; }
+  table.ip td { padding: 10px 16px; border-bottom: 1px solid #f1f5f9; vertical-align: middle; color: #374151; }
+  table.ip tr:last-child td { border-bottom: none; }
+  table.ip tr:hover td { background: #f8fafc; }
+  .ip-class { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 8px; font-weight: 700; font-size: 0.9rem; }
+  .ip-a { background: #dbeafe; color: #1e40af; }
+  .ip-b { background: #dcfce7; color: #14532d; }
+  .ip-c { background: #fef3c7; color: #78350f; }
+  .ip-range { font-family: monospace; font-size: 0.82rem; color: #475569; }
+
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 14px; }
+  @media (max-width: 580px) { .two-col { grid-template-columns: 1fr; } }
 
   footer {
     text-align: center;
@@ -318,312 +330,299 @@
     color: var(--muted);
     border-top: 1px solid var(--border);
   }
-
-  .pin-num {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 22px;
-    height: 22px;
-    border-radius: 50%;
-    background: #f1f5f9;
-    border: 1px solid #e2e8f0;
-    font-size: 12px;
-    font-weight: 600;
-    color: #475569;
-  }
-
-  .priamy-tag {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    background: #d1fae5;
-    color: #065f46;
-    border-radius: 8px;
-    padding: 4px 12px;
-    font-size: 12px;
-    font-weight: 600;
-    border: 1px solid #6ee7b7;
-  }
-  .krizeny-tag {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    background: #fce7f3;
-    color: #831843;
-    border-radius: 8px;
-    padding: 4px 12px;
-    font-size: 12px;
-    font-weight: 600;
-    border: 1px solid #f9a8d4;
-  }
 </style>
 </head>
 <body>
 
 <header>
-  <div class="badge">📡 Počítačové siete</div>
-  <h1>Sietové komponenty & Kabeláž</h1>
+  <div class="badge">💻 Školský projekt</div>
+  <h1>Programové vybavenie počítačov</h1>
+  <p>Prehľad tém – siete, komponenty, číselné sústavy, IP adresy a ďalšie</p>
 </header>
 
-<nav>
-  <a href="#uloha1a">1a – Definícia</a>
-  <a href="#uloha1b">1b – Pasívne</a>
-  <a href="#uloha1c">1c – Aktívne</a>
-  <a href="#uloha2">2 – Kábel T568</a>
+<!-- Navigácia tém -->
+<nav class="tema-nav">
+  <a href="#tema1"><span class="num">1</span> Počítačové siete</a>
+  <a href="#tema2"><span class="num">2</span> Číselné sústavy & IP</a>
 </nav>
 
 <main>
 
-  <!-- ÚLOHA 1a -->
-  <section id="uloha1a">
-    <div class="task-label">📌 Úloha 1a</div>
-    <h2>Definícia počítačovej siete</h2>
-    <p class="sub">Čo je počítačová sieť?</p>
-
-    <div class="definition-box">
-      <strong>Počítačová sieť</strong> je súbor dvoch alebo viacerých vzájomne prepojených zariadení (počítačov, serverov, tlačiarní a iných zariadení), ktoré medzi sebou komunikujú a zdieľajú zdroje (dáta, služby, hardvér) prostredníctvom prenosových médií a sieťových protokolov.
-    </div>
-
-    <div class="card">
-      <h3>Základné znaky počítačovej siete</h3>
-      <p>Sieť umožňuje <strong>zdieľanie dát</strong> – používatelia môžu pristupovať k spoločným súborom, databázam a aplikáciám. Ďalej umožňuje <strong>zdieľanie hardvéru</strong> (napr. tlačiarne, skenery) a <strong>komunikáciu</strong> medzi zariadeniami (e-mail, správy, videohovory).</p>
-      <p>Siete sa delia podľa rozsahu na <strong>LAN</strong> (lokálna sieť – napr. v budove), <strong>MAN</strong> (mestská sieť) a <strong>WAN</strong> (rozľahlá sieť – napr. internet).</p>
-    </div>
-  </section>
-
-  <!-- ÚLOHA 1b -->
-  <section id="uloha1b">
-    <div class="task-label">📌 Úloha 1b</div>
-    <h2>Pasívne komponenty sietí</h2>
-    <p class="sub">Definícia a zoznam pasívnych prvkov sieťovej infraštruktúry</p>
-
-    <div class="definition-box">
-      <strong>Pasívne komponenty</strong> sú sieťové prvky, ktoré <em>neaktívne nespracúvajú ani nezosilňujú signál</em> – iba slúžia ako fyzická prenosová cesta alebo mechanická podpora sieťovej infraštruktúry. Nevyžadujú napájanie elektrickým prúdom.
-    </div>
-
-    <div class="components-grid">
-      <div class="comp-card">
-        <div class="comp-icon icon-passive">🔌</div>
-        <div>
-          <div class="name">Kábel UTP / STP</div>
-          <div class="desc">Krútená dvojlinka – najrozšírenejší prenosový médium v LAN sietiach</div>
-        </div>
-      </div>
-      <div class="comp-card">
-        <div class="comp-icon icon-passive">💡</div>
-        <div>
-          <div class="name">Optický kábel</div>
-          <div class="desc">Prenos dát svetlom cez sklenené/plastové vlákno, vysoká rýchlosť a dosah</div>
-        </div>
-      </div>
-      <div class="comp-card">
-        <div class="comp-icon icon-passive">🔧</div>
-        <div>
-          <div class="name">Konektory RJ-45</div>
-          <div class="desc">Koncové spojenie kábla UTP so zariadením alebo patch panelom</div>
-        </div>
-      </div>
-      <div class="comp-card">
-        <div class="comp-icon icon-passive">📋</div>
-        <div>
-          <div class="name">Patch panel</div>
-          <div class="desc">Pasívna rozvádzačová lišta pre organizáciu a prepájanie káblov</div>
-        </div>
-      </div>
-      <div class="comp-card">
-        <div class="comp-icon icon-passive">🏠</div>
-        <div>
-          <div class="name">Zásuvka RJ-45</div>
-          <div class="desc">Nástenná zásuvka pre pripojenie kábla v miestnosti</div>
-        </div>
-      </div>
-      <div class="comp-card">
-        <div class="comp-icon icon-passive">📦</div>
-        <div>
-          <div class="name">Dátový rozvádzač</div>
-          <div class="desc">Skriňa (rack) na uloženie aktívnych aj pasívnych prvkov siete</div>
-        </div>
-      </div>
-      <div class="comp-card">
-        <div class="comp-icon icon-passive">🛡️</div>
-        <div>
-          <div class="name">Káblové žľaby / lišty</div>
-          <div class="desc">Chránia a vedú káble po stene alebo pod podlahou</div>
-        </div>
-      </div>
-      <div class="comp-card">
-        <div class="comp-icon icon-passive">🔗</div>
-        <div>
-          <div class="name">Koaxiálny kábel</div>
-          <div class="desc">Starší typ kábla, dnes najmä pre TV/CATV rozvody</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ÚLOHA 1c -->
-  <section id="uloha1c">
-    <div class="task-label">📌 Úloha 1c</div>
-    <h2>Aktívne komponenty sietí</h2>
-    <p class="sub">Definícia a zoznam aktívnych prvkov sieťovej infraštruktúry</p>
-
-    <div class="definition-box">
-      <strong>Aktívne komponenty</strong> sú sieťové zariadenia, ktoré <em>aktívne spracúvajú, zosilňujú alebo smerujú sieťový signál</em>. Na svoju funkciu vyžadujú napájanie elektrickým prúdom. Pracujú na rôznych vrstvách modelu OSI.
-    </div>
-
-    <div class="components-grid">
-      <div class="comp-card">
-        <div class="comp-icon icon-active">🔀</div>
-        <div>
-          <div class="name">Switch (prepínač)</div>
-          <div class="desc">Prepína rámce medzi zariadeniami v LAN na základe MAC adries (L2)</div>
-        </div>
-      </div>
-      <div class="comp-card">
-        <div class="comp-icon icon-active">🌐</div>
-        <div>
-          <div class="name">Router (smerovač)</div>
-          <div class="desc">Smeruje pakety medzi sieťami na základe IP adries (L3)</div>
-        </div>
-      </div>
-      <div class="comp-card">
-        <div class="comp-icon icon-active">📡</div>
-        <div>
-          <div class="name">Prístupový bod (AP)</div>
-          <div class="desc">Bezdrôtový prístupový bod – rozširuje sieť cez Wi-Fi</div>
-        </div>
-      </div>
-      <div class="comp-card">
-        <div class="comp-icon icon-active">🔁</div>
-        <div>
-          <div class="name">Hub (rozbočovač)</div>
-          <div class="desc">Zastaraný prvok – odosiela dáta na všetky porty (L1), dnes nahradený switchom</div>
-        </div>
-      </div>
-      <div class="comp-card">
-        <div class="comp-icon icon-active">📶</div>
-        <div>
-          <div class="name">Repeater (opakovač)</div>
-          <div class="desc">Zosilňuje a regeneruje signál pre väčší dosah siete</div>
-        </div>
-      </div>
-      <div class="comp-card">
-        <div class="comp-icon icon-active">🖥️</div>
-        <div>
-          <div class="name">Sieťová karta (NIC)</div>
-          <div class="desc">Hardvérové rozhranie počítača pre pripojenie do siete</div>
-        </div>
-      </div>
-      <div class="comp-card">
-        <div class="comp-icon icon-active">🛡️</div>
-        <div>
-          <div class="name">Firewall</div>
-          <div class="desc">Filtruje sieťovú komunikáciu a chráni sieť pred neoprávneným prístupom</div>
-        </div>
-      </div>
-      <div class="comp-card">
-        <div class="comp-icon icon-active">💾</div>
-        <div>
-          <div class="name">Server</div>
-          <div class="desc">Poskytuje služby ostatným zariadeniam v sieti (web, súbory, DNS...)</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ÚLOHA 2 -->
-  <section id="uloha2">
-    <div class="task-label">📌 Úloha 2</div>
-    <h2>Usporiadanie žíl – T568A a T568B</h2>
-    <p class="sub">Priamy a krížený kábel podľa noriem TIA/EIA T568A a T568B</p>
-
-    <div class="card">
-      <h3>Skratky farieb žíl</h3>
-      <p>
-        <strong>BZ</strong> = bielo-zelená &nbsp;|&nbsp;
-        <strong>Z</strong> = zelená &nbsp;|&nbsp;
-        <strong>BO</strong> = bielo-oranžová &nbsp;|&nbsp;
-        <strong>O</strong> = oranžová &nbsp;|&nbsp;
-        <strong>M</strong> = modrá &nbsp;|&nbsp;
-        <strong>BM</strong> = bielo-modrá &nbsp;|&nbsp;
-        <strong>BH</strong> = bielo-hnedá &nbsp;|&nbsp;
-        <strong>H</strong> = hnedá
-      </p>
-    </div>
-
-    <div class="cable-tables">
-      <!-- T568A -->
-      <div class="cable-table-card">
-        <div class="cable-header a">🔵 T568A <span class="norm-badge norm-a">Norma A</span></div>
-        <table class="pins">
-          <thead><tr><th>Pin</th><th>Farba</th></tr></thead>
-          <tbody>
-            <tr><td><span class="pin-num">1</span></td><td><span class="wire-swatch" style="background:#bef264; border-color:#65a30d;"></span><span class="wire-label">BZ – bielo-zelená</span></td></tr>
-            <tr><td><span class="pin-num">2</span></td><td><span class="wire-swatch" style="background:#16a34a;"></span><span class="wire-label">Z – zelená</span></td></tr>
-            <tr><td><span class="pin-num">3</span></td><td><span class="wire-swatch" style="background:#fed7aa; border-color:#ea580c;"></span><span class="wire-label">BO – bielo-oranžová</span></td></tr>
-            <tr><td><span class="pin-num">4</span></td><td><span class="wire-swatch" style="background:#3b82f6;"></span><span class="wire-label">M – modrá</span></td></tr>
-            <tr><td><span class="pin-num">5</span></td><td><span class="wire-swatch" style="background:#bfdbfe; border-color:#2563eb;"></span><span class="wire-label">BM – bielo-modrá</span></td></tr>
-            <tr><td><span class="pin-num">6</span></td><td><span class="wire-swatch" style="background:#ea580c;"></span><span class="wire-label">O – oranžová</span></td></tr>
-            <tr><td><span class="pin-num">7</span></td><td><span class="wire-swatch" style="background:#e5d3b3; border-color:#92400e;"></span><span class="wire-label">BH – bielo-hnedá</span></td></tr>
-            <tr><td><span class="pin-num">8</span></td><td><span class="wire-swatch" style="background:#92400e;"></span><span class="wire-label">H – hnedá</span></td></tr>
-          </tbody>
-        </table>
-      </div>
-
-      <!-- T568B -->
-      <div class="cable-table-card">
-        <div class="cable-header b">🟣 T568B <span class="norm-badge norm-b">Norma B</span></div>
-        <table class="pins">
-          <thead><tr><th>Pin</th><th>Farba</th></tr></thead>
-          <tbody>
-            <tr><td><span class="pin-num">1</span></td><td><span class="wire-swatch" style="background:#fed7aa; border-color:#ea580c;"></span><span class="wire-label">BO – bielo-oranžová</span></td></tr>
-            <tr><td><span class="pin-num">2</span></td><td><span class="wire-swatch" style="background:#ea580c;"></span><span class="wire-label">O – oranžová</span></td></tr>
-            <tr><td><span class="pin-num">3</span></td><td><span class="wire-swatch" style="background:#bef264; border-color:#65a30d;"></span><span class="wire-label">BZ – bielo-zelená</span></td></tr>
-            <tr><td><span class="pin-num">4</span></td><td><span class="wire-swatch" style="background:#3b82f6;"></span><span class="wire-label">M – modrá</span></td></tr>
-            <tr><td><span class="pin-num">5</span></td><td><span class="wire-swatch" style="background:#bfdbfe; border-color:#2563eb;"></span><span class="wire-label">BM – bielo-modrá</span></td></tr>
-            <tr><td><span class="pin-num">6</span></td><td><span class="wire-swatch" style="background:#16a34a;"></span><span class="wire-label">Z – zelená</span></td></tr>
-            <tr><td><span class="pin-num">7</span></td><td><span class="wire-swatch" style="background:#e5d3b3; border-color:#92400e;"></span><span class="wire-label">BH – bielo-hnedá</span></td></tr>
-            <tr><td><span class="pin-num">8</span></td><td><span class="wire-swatch" style="background:#92400e;"></span><span class="wire-label">H – hnedá</span></td></tr>
-          </tbody>
-        </table>
+  <!-- ===================== TÉMA 1 ===================== -->
+  <div class="tema-block" id="tema1">
+    <div class="tema-header">
+      <div class="tema-number">1</div>
+      <div class="tema-header-text">
+        <h2>Počítačové siete & Kabeláž</h2>
+        <p>Definície, pasívne a aktívne komponenty, normy T568A/B</p>
       </div>
     </div>
 
-    <div style="margin-top: 28px;">
+    <!-- Úloha 1a -->
+    <div class="uloha-block" id="t1-1a">
+      <div class="uloha-label">📌 Úloha 1a</div>
+      <h3>Definícia počítačovej siete</h3>
+      <div class="definition-box">
+        <strong>Počítačová sieť</strong> je súbor dvoch alebo viacerých vzájomne prepojených zariadení (počítačov, serverov, tlačiarní a iných zariadení), ktoré medzi sebou komunikujú a zdieľajú zdroje (dáta, služby, hardvér) prostredníctvom prenosových médií a sieťových protokolov.
+      </div>
       <div class="card">
-        <h3>🟢 Priamy kábel (Straight-through)</h3>
-        <p>Oba konce kábla sú zapojené <strong>rovnako</strong> – buď oba podľa T568A, alebo oba podľa T568B.</p>
-        <p>Používa sa na prepojenie <em>rôznych typov zariadení</em>: počítač ↔ switch, počítač ↔ router, switch ↔ router.</p>
-        <div style="margin-top: 8px; display: flex; gap: 10px; flex-wrap: wrap;">
-          <span class="priamy-tag">Koniec 1: T568B</span>
-          <span style="align-self:center; font-weight:700; color:#64748b;">→→→</span>
-          <span class="priamy-tag">Koniec 2: T568B</span>
+        <h4>Základné znaky počítačovej siete</h4>
+        <p>Sieť umožňuje <strong>zdieľanie dát</strong> – používatelia môžu pristupovať k spoločným súborom, databázam a aplikáciám. Ďalej umožňuje <strong>zdieľanie hardvéru</strong> (napr. tlačiarne, skenery) a <strong>komunikáciu</strong> medzi zariadeniami (e-mail, správy, videohovory).</p>
+        <p>Siete sa delia podľa rozsahu na <strong>LAN</strong> (lokálna sieť – napr. v budove), <strong>MAN</strong> (mestská sieť) a <strong>WAN</strong> (rozľahlá sieť – napr. internet).</p>
+      </div>
+    </div>
+
+    <!-- Úloha 1b -->
+    <div class="uloha-block" id="t1-1b">
+      <div class="uloha-label">📌 Úloha 1b</div>
+      <h3>Pasívne komponenty sietí</h3>
+      <div class="definition-box">
+        <strong>Pasívne komponenty</strong> sú sieťové prvky, ktoré <em>neaktívne nespracúvajú ani nezosilňujú signál</em> – iba slúžia ako fyzická prenosová cesta alebo mechanická podpora sieťovej infraštruktúry. Nevyžadujú napájanie elektrickým prúdom.
+      </div>
+      <div class="components-grid">
+        <div class="comp-card"><div class="comp-icon icon-passive">🔌</div><div><div class="name">Kábel UTP / STP</div><div class="desc">Krútená dvojlinka – najrozšírenejší prenosový médium v LAN sietiach</div></div></div>
+        <div class="comp-card"><div class="comp-icon icon-passive">💡</div><div><div class="name">Optický kábel</div><div class="desc">Prenos dát svetlom cez sklenené/plastové vlákno, vysoká rýchlosť a dosah</div></div></div>
+        <div class="comp-card"><div class="comp-icon icon-passive">🔧</div><div><div class="name">Konektory RJ-45</div><div class="desc">Koncové spojenie kábla UTP so zariadením alebo patch panelom</div></div></div>
+        <div class="comp-card"><div class="comp-icon icon-passive">📋</div><div><div class="name">Patch panel</div><div class="desc">Pasívna rozvádzačová lišta pre organizáciu a prepájanie káblov</div></div></div>
+        <div class="comp-card"><div class="comp-icon icon-passive">🏠</div><div><div class="name">Zásuvka RJ-45</div><div class="desc">Nástenná zásuvka pre pripojenie kábla v miestnosti</div></div></div>
+        <div class="comp-card"><div class="comp-icon icon-passive">📦</div><div><div class="name">Dátový rozvádzač</div><div class="desc">Skriňa (rack) na uloženie aktívnych aj pasívnych prvkov siete</div></div></div>
+        <div class="comp-card"><div class="comp-icon icon-passive">🛡️</div><div><div class="name">Káblové žľaby / lišty</div><div class="desc">Chránia a vedú káble po stene alebo pod podlahou</div></div></div>
+        <div class="comp-card"><div class="comp-icon icon-passive">🔗</div><div><div class="name">Koaxiálny kábel</div><div class="desc">Starší typ kábla, dnes najmä pre TV/CATV rozvody</div></div></div>
+      </div>
+    </div>
+
+    <!-- Úloha 1c -->
+    <div class="uloha-block" id="t1-1c">
+      <div class="uloha-label">📌 Úloha 1c</div>
+      <h3>Aktívne komponenty sietí</h3>
+      <div class="definition-box">
+        <strong>Aktívne komponenty</strong> sú sieťové zariadenia, ktoré <em>aktívne spracúvajú, zosilňujú alebo smerujú sieťový signál</em>. Na svoju funkciu vyžadujú napájanie elektrickým prúdom. Pracujú na rôznych vrstvách modelu OSI.
+      </div>
+      <div class="components-grid">
+        <div class="comp-card"><div class="comp-icon icon-active">🔀</div><div><div class="name">Switch (prepínač)</div><div class="desc">Prepína rámce medzi zariadeniami v LAN na základe MAC adries (L2)</div></div></div>
+        <div class="comp-card"><div class="comp-icon icon-active">🌐</div><div><div class="name">Router (smerovač)</div><div class="desc">Smeruje pakety medzi sieťami na základe IP adries (L3)</div></div></div>
+        <div class="comp-card"><div class="comp-icon icon-active">📡</div><div><div class="name">Prístupový bod (AP)</div><div class="desc">Bezdrôtový prístupový bod – rozširuje sieť cez Wi-Fi</div></div></div>
+        <div class="comp-card"><div class="comp-icon icon-active">🔁</div><div><div class="name">Hub (rozbočovač)</div><div class="desc">Zastaraný prvok – odosiela dáta na všetky porty (L1)</div></div></div>
+        <div class="comp-card"><div class="comp-icon icon-active">📶</div><div><div class="name">Repeater (opakovač)</div><div class="desc">Zosilňuje a regeneruje signál pre väčší dosah siete</div></div></div>
+        <div class="comp-card"><div class="comp-icon icon-active">🖥️</div><div><div class="name">Sieťová karta (NIC)</div><div class="desc">Hardvérové rozhranie počítača pre pripojenie do siete</div></div></div>
+        <div class="comp-card"><div class="comp-icon icon-active">🛡️</div><div><div class="name">Firewall</div><div class="desc">Filtruje sieťovú komunikáciu a chráni sieť pred neoprávneným prístupom</div></div></div>
+        <div class="comp-card"><div class="comp-icon icon-active">💾</div><div><div class="name">Server</div><div class="desc">Poskytuje služby ostatným zariadeniam v sieti (web, súbory, DNS...)</div></div></div>
+      </div>
+    </div>
+
+    <!-- Úloha 2 (T568) -->
+    <div class="uloha-block" id="t1-2">
+      <div class="uloha-label">📌 Úloha 2</div>
+      <h3>Usporiadanie žíl – T568A a T568B</h3>
+      <div class="card">
+        <h4>Skratky farieb žíl</h4>
+        <p><strong>BZ</strong> = bielo-zelená &nbsp;|&nbsp; <strong>Z</strong> = zelená &nbsp;|&nbsp; <strong>BO</strong> = bielo-oranžová &nbsp;|&nbsp; <strong>O</strong> = oranžová &nbsp;|&nbsp; <strong>M</strong> = modrá &nbsp;|&nbsp; <strong>BM</strong> = bielo-modrá &nbsp;|&nbsp; <strong>BH</strong> = bielo-hnedá &nbsp;|&nbsp; <strong>H</strong> = hnedá</p>
+      </div>
+      <div class="cable-tables">
+        <div class="cable-table-card">
+          <div class="cable-header a">🔵 T568A <span class="norm-badge norm-a">Norma A</span></div>
+          <table class="pins">
+            <thead><tr><th>Pin</th><th>Farba</th></tr></thead>
+            <tbody>
+              <tr><td><span class="pin-num">1</span></td><td><span class="wire-swatch" style="background:#bef264;border-color:#65a30d;"></span><span class="wire-label">BZ – bielo-zelená</span></td></tr>
+              <tr><td><span class="pin-num">2</span></td><td><span class="wire-swatch" style="background:#16a34a;"></span><span class="wire-label">Z – zelená</span></td></tr>
+              <tr><td><span class="pin-num">3</span></td><td><span class="wire-swatch" style="background:#fed7aa;border-color:#ea580c;"></span><span class="wire-label">BO – bielo-oranžová</span></td></tr>
+              <tr><td><span class="pin-num">4</span></td><td><span class="wire-swatch" style="background:#3b82f6;"></span><span class="wire-label">M – modrá</span></td></tr>
+              <tr><td><span class="pin-num">5</span></td><td><span class="wire-swatch" style="background:#bfdbfe;border-color:#2563eb;"></span><span class="wire-label">BM – bielo-modrá</span></td></tr>
+              <tr><td><span class="pin-num">6</span></td><td><span class="wire-swatch" style="background:#ea580c;"></span><span class="wire-label">O – oranžová</span></td></tr>
+              <tr><td><span class="pin-num">7</span></td><td><span class="wire-swatch" style="background:#e5d3b3;border-color:#92400e;"></span><span class="wire-label">BH – bielo-hnedá</span></td></tr>
+              <tr><td><span class="pin-num">8</span></td><td><span class="wire-swatch" style="background:#92400e;"></span><span class="wire-label">H – hnedá</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="cable-table-card">
+          <div class="cable-header b">🟣 T568B <span class="norm-badge norm-b">Norma B</span></div>
+          <table class="pins">
+            <thead><tr><th>Pin</th><th>Farba</th></tr></thead>
+            <tbody>
+              <tr><td><span class="pin-num">1</span></td><td><span class="wire-swatch" style="background:#fed7aa;border-color:#ea580c;"></span><span class="wire-label">BO – bielo-oranžová</span></td></tr>
+              <tr><td><span class="pin-num">2</span></td><td><span class="wire-swatch" style="background:#ea580c;"></span><span class="wire-label">O – oranžová</span></td></tr>
+              <tr><td><span class="pin-num">3</span></td><td><span class="wire-swatch" style="background:#bef264;border-color:#65a30d;"></span><span class="wire-label">BZ – bielo-zelená</span></td></tr>
+              <tr><td><span class="pin-num">4</span></td><td><span class="wire-swatch" style="background:#3b82f6;"></span><span class="wire-label">M – modrá</span></td></tr>
+              <tr><td><span class="pin-num">5</span></td><td><span class="wire-swatch" style="background:#bfdbfe;border-color:#2563eb;"></span><span class="wire-label">BM – bielo-modrá</span></td></tr>
+              <tr><td><span class="pin-num">6</span></td><td><span class="wire-swatch" style="background:#16a34a;"></span><span class="wire-label">Z – zelená</span></td></tr>
+              <tr><td><span class="pin-num">7</span></td><td><span class="wire-swatch" style="background:#e5d3b3;border-color:#92400e;"></span><span class="wire-label">BH – bielo-hnedá</span></td></tr>
+              <tr><td><span class="pin-num">8</span></td><td><span class="wire-swatch" style="background:#92400e;"></span><span class="wire-label">H – hnedá</span></td></tr>
+            </tbody>
+          </table>
         </div>
       </div>
+      <div class="two-col" style="margin-top:16px;">
+        <div class="card" style="margin-bottom:0;">
+          <h4>🟢 Priamy kábel</h4>
+          <p>Oba konce zapojené rovnako (oba T568A alebo oba T568B). Použitie: počítač ↔ switch, počítač ↔ router.</p>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px;">
+            <span class="priamy-tag">Koniec 1: T568B</span>
+            <span style="align-self:center;font-weight:700;color:#64748b;">→</span>
+            <span class="priamy-tag">Koniec 2: T568B</span>
+          </div>
+        </div>
+        <div class="card" style="margin-bottom:0;">
+          <h4>🔴 Krížený kábel</h4>
+          <p>Jeden koniec T568A, druhý T568B. Použitie: počítač ↔ počítač, switch ↔ switch.</p>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px;">
+            <span class="priamy-tag">Koniec 1: T568A</span>
+            <span style="align-self:center;font-weight:700;color:#64748b;">⟷</span>
+            <span class="krizeny-tag">Koniec 2: T568B</span>
+          </div>
+        </div>
+      </div>
+      <div class="crossover-note" style="margin-top:14px;">
+        <span>⚠️</span>
+        <div><strong>Poznámka:</strong> Moderné zariadenia s funkciou <em>Auto-MDI/MDIX</em> dokážu automaticky rozpoznať typ kábla – krížený kábel nie je vždy potrebný.</div>
+      </div>
+    </div>
+  </div>
 
-      <div class="card" style="margin-top: 16px;">
-        <h3>🔴 Krížený kábel (Crossover)</h3>
-        <p>Jeden koniec je zapojený podľa <strong>T568A</strong> a druhý podľa <strong>T568B</strong>. Páry 1-2 a 3-6 sú krížené.</p>
-        <p>Používa sa na prepojenie <em>rovnakých typov zariadení</em>: počítač ↔ počítač, switch ↔ switch.</p>
-        <div style="margin-top: 8px; display: flex; gap: 10px; flex-wrap: wrap;">
-          <span class="priamy-tag">Koniec 1: T568A</span>
-          <span style="align-self:center; font-weight:700; color:#64748b;">⟷</span>
-          <span class="krizeny-tag">Koniec 2: T568B</span>
+  <!-- ===================== TÉMA 2 ===================== -->
+  <div class="tema-block" id="tema2">
+    <div class="tema-header">
+      <div class="tema-number">2</div>
+      <div class="tema-header-text">
+        <h2>Číselné sústavy & IP adresy</h2>
+        <p>Dvojková, desiatková, hexadecimálna sústava a triedy IP adries</p>
+      </div>
+    </div>
+
+    <!-- Úloha 2a – číselné sústavy -->
+    <div class="uloha-block" id="t2-2a">
+      <div class="uloha-label">📌 Úloha 2a</div>
+      <h3>Číselné sústavy – dvojková, desiatková, hexadecimálna</h3>
+      <div class="sustava-grid">
+        <div class="sustava-card">
+          <span class="s-badge s-bin">Základ 2</span>
+          <h4>Dvojková sústava (binárna)</h4>
+          <p>Používa iba dve cifry: <strong>0</strong> a <strong>1</strong>. Každá pozícia predstavuje mocninu čísla 2. Je základom digitálnej elektroniky a počítačov.</p>
+          <div class="example">1010₂ = 10₁₀</div>
+        </div>
+        <div class="sustava-card">
+          <span class="s-badge s-dec">Základ 10</span>
+          <h4>Desiatková sústava (dekadická)</h4>
+          <p>Používa cifry <strong>0–9</strong>. Je to sústava, ktorú používame v bežnom živote. Každá pozícia predstavuje mocninu čísla 10.</p>
+          <div class="example">255₁₀ = 11111111₂</div>
+        </div>
+        <div class="sustava-card">
+          <span class="s-badge s-hex">Základ 16</span>
+          <h4>Hexadecimálna sústava</h4>
+          <p>Používa cifry <strong>0–9</strong> a písmená <strong>A–F</strong> (kde A=10, B=11, ... F=15). Každá pozícia predstavuje mocninu čísla 16.</p>
+          <div class="example">FF₁₆ = 255₁₀ = 11111111₂</div>
         </div>
       </div>
     </div>
 
-    <div class="crossover-note">
-      <span class="icon">⚠️</span>
-      <div><strong>Poznámka:</strong> Moderné zariadenia s funkciou <em>Auto-MDI/MDIX</em> dokážu automaticky rozpoznať typ kábla a prispôsobiť sa mu – krížený kábel nie je vždy potrebný. Napriek tomu je dôležité poznať oba typy pre potreby certifikácie a starších sietí.</div>
+    <!-- Úloha 2b – dvojková v číslicových zariadeniach -->
+    <div class="uloha-block" id="t2-2b">
+      <div class="uloha-label">📌 Úloha 2b</div>
+      <h3>Dvojková sústava v číslicových zariadeniach</h3>
+      <div class="definition-box">
+        Číslicové zariadenia (počítače, mikroprocesory, pamäte) pracujú s <strong>elektrickými signálmi</strong>, ktoré môžu nadobúdať iba dve hodnoty: <em>zapnuté (1)</em> alebo <em>vypnuté (0)</em>. Preto je dvojková sústava ideálna pre ich popis.
+      </div>
+      <div class="card">
+        <h4>Prečo práve dvojková sústava?</h4>
+        <p>Tranzistory a logické obvody v počítačoch pracujú v dvoch stavoch – <strong>vysoké napätie (log. 1)</strong> a <strong>nízke napätie (log. 0)</strong>. Tieto stavy sa dajú spoľahlivo rozlíšiť aj pri rušení alebo šume v obvode.</p>
+        <p>Základnou jednotkou informácie je <strong>bit</strong> (0 alebo 1). 8 bitov tvorí <strong>1 bajt</strong>, ktorý dokáže vyjadriť hodnoty 0–255. Celá digitálna informácia – text, obrázky, zvuk, video – je v počítači uložená ako postupnosť núl a jednotiek.</p>
+      </div>
+      <div class="two-col">
+        <div class="card" style="margin-bottom:0;">
+          <h4>⚡ Výhody dvojkovej sústavy</h4>
+          <p>Jednoduchá implementácia v hardware, odolnosť voči šumu, spoľahlivosť logických operácií (AND, OR, NOT).</p>
+        </div>
+        <div class="card" style="margin-bottom:0;">
+          <h4>🔢 Jednotky informácie</h4>
+          <p>1 bit → 1 bajt (8 bitov) → 1 KB (1024 B) → 1 MB → 1 GB → 1 TB</p>
+        </div>
+      </div>
     </div>
-  </section>
+
+    <!-- Úloha 2c – fyzická vs logická adresa -->
+    <div class="uloha-block" id="t2-2c">
+      <div class="uloha-label">📌 Úloha 2c</div>
+      <h3>Fyzická a logická adresa počítača</h3>
+      <div class="two-col">
+        <div class="card" style="margin-bottom:0;">
+          <h4>🔩 Fyzická adresa (MAC)</h4>
+          <p><strong>MAC adresa</strong> (Media Access Control) je jedinečný identifikátor sieťovej karty priradený výrobcom. Je zapísaná priamo do hardware zariadenia a nemení sa.</p>
+          <p>Formát: <code>00:1A:2B:3C:4D:5E</code> – 6 dvojíc hexadecimálnych čísel (48 bitov).</p>
+          <p>Funguje na <strong>2. vrstve</strong> modelu OSI (linková vrstva). Využíva sa na komunikáciu v rámci lokálnej siete (LAN).</p>
+        </div>
+        <div class="card" style="margin-bottom:0;">
+          <h4>🌐 Logická adresa (IP)</h4>
+          <p><strong>IP adresa</strong> (Internet Protocol) je adresa priradená zariadeniu v sieti. Môže sa meniť – priraďuje ju správca siete alebo DHCP server.</p>
+          <p>Formát IPv4: <code>192.168.1.10</code> – 4 čísla oddelené bodkou (32 bitov).</p>
+          <p>Funguje na <strong>3. vrstve</strong> modelu OSI (sieťová vrstva). Umožňuje smerovanie paketov medzi rôznymi sieťami (internet).</p>
+        </div>
+      </div>
+      <div class="card" style="margin-top:14px;">
+        <h4>Rozdiel v skratke</h4>
+        <p><strong>Fyzická (MAC)</strong> adresa identifikuje konkrétny hardware – je trvalá a nemenná, ako rodné číslo zariadenia. <strong>Logická (IP)</strong> adresa identifikuje zariadenie v sieti – je dočasná a meniteľná, ako adresa bydliska.</p>
+      </div>
+    </div>
+
+    <!-- Úloha 2 – IP triedy -->
+    <div class="uloha-block" id="t2-ul2">
+      <div class="uloha-label">📌 Úloha 2</div>
+      <h3>Triedy IP adries – A, B, C</h3>
+      <div class="definition-box">
+        IPv4 adresy (32-bitové) boli pôvodne rozdelené do tried podľa <strong>hodnoty prvého oktetu</strong> (prvého čísla adresy). Trieda určuje, koľko bitov je vyhradených pre <em>adresu siete</em> a koľko pre <em>adresu zariadenia</em>.
+      </div>
+      <div class="ip-table-wrap">
+        <table class="ip">
+          <thead>
+            <tr>
+              <th>Trieda</th>
+              <th>Rozsah 1. oktetu</th>
+              <th>Maska siete</th>
+              <th>Počet sietí</th>
+              <th>Počet hostiteľov</th>
+              <th>Použitie</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="ip-class ip-a">A</span></td>
+              <td><span class="ip-range">1 – 126</span></td>
+              <td><span class="ip-range">255.0.0.0 /8</span></td>
+              <td>126</td>
+              <td>~16 miliónov</td>
+              <td>Veľké organizácie</td>
+            </tr>
+            <tr>
+              <td><span class="ip-class ip-b">B</span></td>
+              <td><span class="ip-range">128 – 191</span></td>
+              <td><span class="ip-range">255.255.0.0 /16</span></td>
+              <td>16 384</td>
+              <td>~65 000</td>
+              <td>Stredné organizácie</td>
+            </tr>
+            <tr>
+              <td><span class="ip-class ip-c">C</span></td>
+              <td><span class="ip-range">192 – 223</span></td>
+              <td><span class="ip-range">255.255.255.0 /24</span></td>
+              <td>~2 milióny</td>
+              <td>254</td>
+              <td>Malé siete, domácnosti</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="card" style="margin-top:16px;">
+        <h4>Logika delenia tried</h4>
+        <p>Delenie vychádza z <strong>hodnoty prvých bitov adresy</strong>. Trieda A začína bitom <code>0</code>, trieda B začína <code>10</code> a trieda C začína <code>110</code>. Čím vyššia trieda, tým viac sietí ale menej zariadení v každej sieti.</p>
+        <p>Dnes sa triedy používajú menej – nahradilo ich <strong>CIDR</strong> (Classless Inter-Domain Routing), ktoré umožňuje flexibilnejšie rozdeľovanie adresného priestoru.</p>
+      </div>
+    </div>
+
+  </div>
 
 </main>
 
 <footer>
-  Stránka &nbsp;·&nbsp; Počítačové siete &nbsp;&nbsp; 
+  Programové vybavenie počítačov &nbsp;·&nbsp; Maturitné témy &nbsp;·&nbsp; Timothy Horoba
 </footer>
 
 </body>

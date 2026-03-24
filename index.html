@@ -344,6 +344,7 @@
 <nav class="tema-nav">
   <a href="#tema1"><span class="num">1</span> Počítačové siete</a>
   <a href="#tema2"><span class="num">2</span> Číselné sústavy & IP</a>
+  <a href="#tema3"><span class="num">3</span> Kabeláž & Porovnanie</a>
 </nav>
 
 <main>
@@ -619,10 +620,153 @@
 
   </div>
 
+
+  <!-- ===================== TÉMA 3 ===================== -->
+  <div class="tema-block" id="tema3">
+    <div class="tema-header">
+      <div class="tema-number">3</div>
+      <div class="tema-header-text">
+        <h2>Kabeláž – kontrola, štruktúra & porovnanie</h2>
+        <p>Meranie TP kábla, štruktúrovaná kabeláž, porovnanie typov káblov a internetu</p>
+      </div>
+    </div>
+
+    <!-- 1b -->
+    <div class="uloha-block" id="t3-1b">
+      <div class="uloha-label">📌 1b</div>
+      <h3>Kontrola TP kábla pomocou meracieho prístroja</h3>
+      <div class="definition-box">
+        Na kontrolu správnosti zapojenia a funkčnosti krútenej dvojlinky (TP kábla) sa používa <strong>káblový tester</strong> – špeciálny merací prístroj, ktorý overuje každú žilu kábla samostatne.
+      </div>
+      <div class="card">
+        <h4>Postup kontroly</h4>
+        <p>Oba konce kábla sa zastrčia do konektorov testerа (hlavná jednotka a vzdialená jednotka). Tester postupne posiela elektrický signál cez každý z 8 pinov a kontroluje, či signál správne dorazí na druhý koniec na správny pin.</p>
+        <p>Výsledok sa zobrazí na LED indikátoroch – každý pin má svoju kontrolku. Ak všetky svietia v správnom poradí, kábel je v poriadku.</p>
+      </div>
+      <div class="two-col">
+        <div class="card" style="margin-bottom:0;">
+          <h4>✅ Čo tester overuje</h4>
+          <p>Správnosť zapojenia žíl (či pin 1 ide na pin 1 atď.), skrat medzi žilami, prerušenie žily, crossover zapojenie.</p>
+        </div>
+        <div class="card" style="margin-bottom:0;">
+          <h4>⚠️ Chybové stavy</h4>
+          <p><strong>Prerušenie</strong> – kontrolka nesvieti. <strong>Skrat</strong> – svietia dve naraz. <strong>Prehodenie</strong> – svietia v nesprávnom poradí.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 1c -->
+    <div class="uloha-block" id="t3-1c">
+      <div class="uloha-label">📌 1c</div>
+      <h3>Štruktúrovaná kabeláž – popis a význam</h3>
+      <div class="definition-box">
+        <strong>Štruktúrovaná kabeláž</strong> je systém káblov, konektorov a rozvádzačov navrhnutý podľa medzinárodných noriem (ISO/IEC 11801, EN 50173), ktorý tvorí jednotnú, univerzálnu sieťovú infraštruktúru budovy nezávislú od konkrétnej technológie.
+      </div>
+      <div class="card">
+        <h4>Popis systému</h4>
+        <p>Štruktúrovaná kabeláž sa skladá z niekoľkých vrstiev: <strong>horizontálna sekcia</strong> (kábel od rozvádzača k zásuvke v miestnosti), <strong>vertikálna sekcia</strong> (prepojenie poschodí a budov) a <strong>pracovná sekcia</strong> (patch kábel od zásuvky k zariadeniu).</p>
+        <p>Všetky káble vedú do centrálneho <strong>dátového rozvádzača</strong> s patch panelom, kde je každé pracovisko prehľadne označené a prepojené.</p>
+      </div>
+      <div class="components-grid">
+        <div class="comp-card"><div class="comp-icon icon-active">📐</div><div><div class="name">Univerzálnosť</div><div class="desc">Rovnaká infraštruktúra pre dáta, telefón aj bezpečnostné systémy</div></div></div>
+        <div class="comp-card"><div class="comp-icon icon-active">🔧</div><div><div class="name">Jednoduchá správa</div><div class="desc">Zmeny zapojenia len v rozvádzači – bez zásahu do káblov v stenách</div></div></div>
+        <div class="comp-card"><div class="comp-icon icon-active">📈</div><div><div class="name">Škálovateľnosť</div><div class="desc">Ľahké rozširovanie siete bez nutnosti novej kabeláže</div></div></div>
+        <div class="comp-card"><div class="comp-icon icon-active">✅</div><div><div class="name">Spoľahlivosť</div><div class="desc">Budovaná podľa noriem – zaručuje kvalitu a výkon prenosu</div></div></div>
+      </div>
+    </div>
+
+    <!-- 3a -->
+    <div class="uloha-block" id="t3-3a">
+      <div class="uloha-label">📌 3a</div>
+      <h3>Porovnanie koaxiálneho kábla, krútenej dvojlinky a optického kábla</h3>
+      <div class="sustava-grid" style="grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));">
+        <div class="sustava-card">
+          <span class="s-badge s-hex">Koaxiálny kábel</span>
+          <h4>Koaxiálny kábel</h4>
+          <p><strong>Výhody:</strong> Odolný voči elektromagnetickému rušeniu, vhodný pre dlhšie vzdialenosti bez zosilňovača, robustná konštrukcia.</p>
+          <p><strong>Nevýhody:</strong> Hrubý a tuhý – ťažšie sa inštaluje, drahší, dnes nahradený modernejšími riešeniami, nižšia prenosová rýchlosť oproti optike.</p>
+        </div>
+        <div class="sustava-card">
+          <span class="s-badge s-bin">Krútená dvojlinka (TP)</span>
+          <h4>Krútená dvojlinka</h4>
+          <p><strong>Výhody:</strong> Lacná, ľahká inštalácia, flexibilná, štandard pre LAN siete (až 10 Gbps pre Cat6A), ľahko dostupná.</p>
+          <p><strong>Nevýhody:</strong> Obmedzená vzdialenosť (max ~100 m), náchylnejšia na elektromagnetické rušenie ako koax a optika.</p>
+        </div>
+        <div class="sustava-card">
+          <span class="s-badge s-dec">Optický kábel</span>
+          <h4>Optický kábel</h4>
+          <p><strong>Výhody:</strong> Extrémne vysoká rýchlosť (až Tbps), veľký dosah (desiatky km), imúnny voči elektromagnetickému rušeniu, bezpečný.</p>
+          <p><strong>Nevýhody:</strong> Drahší, krehkejší, náročnejšia inštalácia a oprava, vyžaduje špeciálne konektory a zariadenia.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3b -->
+    <div class="uloha-block" id="t3-3b">
+      <div class="uloha-label">📌 3b</div>
+      <h3>Ekonomická výhodnosť typov internetového pripojenia</h3>
+      <div class="ip-table-wrap">
+        <table class="ip">
+          <thead>
+            <tr>
+              <th>Typ pripojenia</th>
+              <th>Rýchlosť</th>
+              <th>Cena inštalácie</th>
+              <th>Mesačné náklady</th>
+              <th>Vhodnosť</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Telefónna linka (DSL)</strong></td>
+              <td>do 100 Mbps</td>
+              <td>Nízka</td>
+              <td>Nízke</td>
+              <td>Starší dostupný rozvod, vidiek</td>
+            </tr>
+            <tr>
+              <td><strong>Koaxiálny kábel (CATV)</strong></td>
+              <td>do 1 Gbps</td>
+              <td>Stredná</td>
+              <td>Stredné</td>
+              <td>Mestá, tam kde je TV rozvod</td>
+            </tr>
+            <tr>
+              <td><strong>Krútená dvojlinka (Ethernet)</strong></td>
+              <td>do 10 Gbps</td>
+              <td>Nízka–stredná</td>
+              <td>Stredné</td>
+              <td>Firmy, školy, domácnosti v LAN</td>
+            </tr>
+            <tr>
+              <td><strong>Optický kábel (FTTH)</strong></td>
+              <td>až 10 Gbps+</td>
+              <td>Vysoká</td>
+              <td>Stredné–vyššie</td>
+              <td>Najlepší výkon, mestá, firmy</td>
+            </tr>
+            <tr>
+              <td><strong>WiFi (bezdrôtové)</strong></td>
+              <td>do 9.6 Gbps (WiFi 6)</td>
+              <td>Nízka</td>
+              <td>Nízke–stredné</td>
+              <td>Mobilita, domácnosti, verejné miesta</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="card" style="margin-top:16px;">
+        <h4>Záver – čo je ekonomicky najvýhodnejšie?</h4>
+        <p>Pre <strong>bežnú domácnosť</strong> je najvýhodnejšia kombinácia <em>optického kábla (FTTH) + WiFi</em> – optika zabezpečí rýchle pripojenie do domu a WiFi rozvedie signál bezdrôtovo. Pre <strong>vidiecke oblasti</strong> bez optiky je stále relevantné DSL alebo mobilné LTE/5G pripojenie. Pre <strong>firmy a školy</strong> je ideálna štruktúrovaná kabeláž na báze krútenej dvojlinky alebo optiky s WiFi ako doplnok.</p>
+      </div>
+    </div>
+
+  </div>
+
 </main>
 
 <footer>
-  Programové vybavenie počítačov &nbsp;·&nbsp; Maturitné témy &nbsp;·&nbsp; Timothy Horoba
+  Maturitné témy &nbsp;·&nbsp; Timothy Horoba 
 </footer>
 
 </body>

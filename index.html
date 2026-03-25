@@ -345,6 +345,8 @@
   <a href="#tema1"><span class="num">1</span> Počítačové siete</a>
   <a href="#tema2"><span class="num">2</span> Číselné sústavy & IP</a>
   <a href="#tema3"><span class="num">3</span> Kabeláž & Porovnanie</a>
+  <a href="#tema4"><span class="num">4</span> Internet & Bezpečnosť</a>
+  <a href="#tema5"><span class="num">5</span> Grafika & Obraz</a>
 </nav>
 
 <main>
@@ -758,6 +760,366 @@
       <div class="card" style="margin-top:16px;">
         <h4>Záver – čo je ekonomicky najvýhodnejšie?</h4>
         <p>Pre <strong>bežnú domácnosť</strong> je najvýhodnejšia kombinácia <em>optického kábla (FTTH) + WiFi</em> – optika zabezpečí rýchle pripojenie do domu a WiFi rozvedie signál bezdrôtovo. Pre <strong>vidiecke oblasti</strong> bez optiky je stále relevantné DSL alebo mobilné LTE/5G pripojenie. Pre <strong>firmy a školy</strong> je ideálna štruktúrovaná kabeláž na báze krútenej dvojlinky alebo optiky s WiFi ako doplnok.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ===================== TÉMA 4 ===================== -->
+  <div class="tema-block" id="tema4">
+    <div class="tema-header">
+      <div class="tema-number">4</div>
+      <div class="tema-header-text">
+        <h2>Internet, komunikácia & Bezpečnosť</h2>
+        <p>Pojmy internetu, pripojenie, netiketa, výpočet prenosu a zabezpečenie prístupu</p>
+      </div>
+    </div>
+
+    <!-- 1a -->
+    <div class="uloha-block" id="t4-1a">
+      <div class="uloha-label">📌 1a</div>
+      <h3>Komunikácia, interaktívna a neinteraktívna komunikácia</h3>
+      <div class="sustava-grid">
+        <div class="sustava-card">
+          <span class="s-badge s-dec">Základný pojem</span>
+          <h4>Komunikácia</h4>
+          <p>Komunikácia je proces výmeny informácií medzi dvoma alebo viacerými subjektmi prostredníctvom dohodnutého média a jazyka. V IT kontexte ide o prenos dát medzi zariadeniami alebo používateľmi cez sieť.</p>
+        </div>
+        <div class="sustava-card">
+          <span class="s-badge s-bin">Obojsmerná</span>
+          <h4>Interaktívna komunikácia</h4>
+          <p>Komunikácia prebieha <strong>v reálnom čase</strong> – obaja účastníci si okamžite vymieňajú správy a reagujú na seba. Príklady: chat, videohovor, online hra, telefonát cez internet (VoIP).</p>
+        </div>
+        <div class="sustava-card">
+          <span class="s-badge s-hex">Jednosmerná</span>
+          <h4>Neinteraktívna komunikácia</h4>
+          <p>Komunikácia <strong>bez okamžitej odozvy</strong> – správa je odoslaná a príjemca ju prečíta neskôr. Príklady: e-mail, diskusné fórum, blog, SMS, záznamník.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 1b -->
+    <div class="uloha-block" id="t4-1b">
+      <div class="uloha-label">📌 1b</div>
+      <h3>ISP, IP adresa, URL, doménová adresa, DNS</h3>
+      <div class="components-grid">
+        <div class="comp-card"><div class="comp-icon icon-active">🏢</div><div><div class="name">ISP</div><div class="desc">Internet Service Provider – poskytovateľ internetového pripojenia (napr. Orange, T-com, Swan)</div></div></div>
+        <div class="comp-card"><div class="comp-icon icon-active">🔢</div><div><div class="name">IP adresa</div><div class="desc">Číselná adresa zariadenia v sieti (napr. 192.168.1.1). Slúži na identifikáciu a smerovanie paketov</div></div></div>
+        <div class="comp-card"><div class="comp-icon icon-active">🔗</div><div><div class="name">URL</div><div class="desc">Uniform Resource Locator – úplná adresa zdroja na internete, napr. https://www.skola.sk/kontakt</div></div></div>
+        <div class="comp-card"><div class="comp-icon icon-active">🌐</div><div><div class="name">Doménová adresa</div><div class="desc">Ľudsky čitateľný názov webovej stránky, napr. google.com alebo skola.sk</div></div></div>
+        <div class="comp-card"><div class="comp-icon icon-active">📖</div><div><div class="name">DNS</div><div class="desc">Domain Name System – „telefónny zoznam internetu", prekladá doménové adresy na IP adresy</div></div></div>
+      </div>
+      <div class="card" style="margin-top:14px;">
+        <h4>Ako to spolu súvisí?</h4>
+        <p>Keď zadáš <strong>URL</strong> do prehliadača (napr. <code>https://www.google.com</code>), prehliadač sa opýta <strong>DNS</strong> servera na IP adresu domény. DNS vráti IP (napr. <code>142.250.185.46</code>) a prehliadač sa pripojí na tento server cez <strong>ISP</strong>.</p>
+      </div>
+    </div>
+
+    <!-- 1c -->
+    <div class="uloha-block" id="t4-1c">
+      <div class="uloha-label">📌 1c</div>
+      <h3>HTTP, HTML, internetový prehliadač</h3>
+      <div class="two-col">
+        <div class="card" style="margin-bottom:0;">
+          <h4>🔒 HTTP / HTTPS</h4>
+          <p><strong>HTTP</strong> (HyperText Transfer Protocol) je protokol pre prenos webových stránok medzi serverom a prehliadačom. <strong>HTTPS</strong> je jeho šifrovaná verzia (S = Secure) – dáta sú zašifrované, čo chráni pred odpočúvaním.</p>
+        </div>
+        <div class="card" style="margin-bottom:0;">
+          <h4>📄 HTML</h4>
+          <p><strong>HTML</strong> (HyperText Markup Language) je značkovací jazyk pre tvorbu webových stránok. Pomocou značiek (tagov) ako <code>&lt;h1&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;img&gt;</code> definuje štruktúru a obsah stránky.</p>
+        </div>
+      </div>
+      <div class="card" style="margin-top:14px;">
+        <h4>🖥️ Internetový prehliadač</h4>
+        <p><strong>Internetový prehliadač</strong> (browser) je aplikácia, ktorá sťahuje webové stránky zo serverov pomocou HTTP/HTTPS, interpretuje HTML kód a zobrazuje stránku používateľovi. Príklady: Google Chrome, Mozilla Firefox, Microsoft Edge, Safari.</p>
+        <p>Prehliadač tiež spracováva CSS (štýly) a JavaScript (interaktivita), čím umožňuje zobrazenie moderných dynamických webových aplikácií.</p>
+      </div>
+    </div>
+
+    <!-- 2a -->
+    <div class="uloha-block" id="t4-2a">
+      <div class="uloha-label">📌 2a</div>
+      <h3>Možnosti pripojenia na Internet</h3>
+      <div class="ip-table-wrap">
+        <table class="ip">
+          <thead>
+            <tr>
+              <th>Typ pripojenia</th>
+              <th>Technológia</th>
+              <th>Rýchlosť</th>
+              <th>Výhody</th>
+              <th>Nevýhody</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>DSL</strong></td>
+              <td>Telefónna linka</td>
+              <td>do 100 Mbps</td>
+              <td>Dostupné tam kde je telefón</td>
+              <td>Závisí od vzdialenosti od ústredne</td>
+            </tr>
+            <tr>
+              <td><strong>Kábel (CATV)</strong></td>
+              <td>Koaxiálny kábel</td>
+              <td>do 1 Gbps</td>
+              <td>Rýchle, rozšírené v mestách</td>
+              <td>Zdieľaná kapacita so susedmi</td>
+            </tr>
+            <tr>
+              <td><strong>Optika (FTTH)</strong></td>
+              <td>Optické vlákno</td>
+              <td>až 10 Gbps</td>
+              <td>Najrýchlejšie, symetrické</td>
+              <td>Vyššia cena inštalácie</td>
+            </tr>
+            <tr>
+              <td><strong>WiFi</strong></td>
+              <td>Rádiové vlny</td>
+              <td>do 9.6 Gbps</td>
+              <td>Bezdrôtové, mobilné</td>
+              <td>Rušenie, dosah obmedzený</td>
+            </tr>
+            <tr>
+              <td><strong>Mobilné (LTE/5G)</strong></td>
+              <td>Mobilná sieť</td>
+              <td>do 10 Gbps (5G)</td>
+              <td>Kdekoľvek, rýchle nasadenie</td>
+              <td>Drahší dátový paušál, pokrytie</td>
+            </tr>
+            <tr>
+              <td><strong>Satelit</strong></td>
+              <td>Satelitný signál</td>
+              <td>do 100 Mbps</td>
+              <td>Dostupné aj na odľahlých miestach</td>
+              <td>Vysoká latencia, cena</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- 2b -->
+    <div class="uloha-block" id="t4-2b">
+      <div class="uloha-label">📌 2b</div>
+      <h3>Počítačová netiketa</h3>
+      <div class="definition-box">
+        <strong>Netiketa</strong> (z angl. <em>net</em> + <em>etiquette</em>) je súbor pravidiel slušného a zodpovedného správania sa na internete a v digitálnej komunikácii. Je internetovým ekvivalentom spoločenskej etikety.
+      </div>
+      <div class="components-grid">
+        <div class="comp-card"><div class="comp-icon icon-active">✉️</div><div><div class="name">Slušná komunikácia</div><div class="desc">Nepoužívaj hrubé slová, neútoč na ostatných, píš zrozumiteľne a zdvorilo</div></div></div>
+        <div class="comp-card"><div class="comp-icon icon-active">🔐</div><div><div class="name">Ochrana súkromia</div><div class="desc">Nezverejňuj osobné údaje iných bez súhlasu, chráň svoje heslá a prístupové údaje</div></div></div>
+        <div class="comp-card"><div class="comp-icon icon-active">©️</div><div><div class="name">Rešpektovanie autorských práv</div><div class="desc">Nešír nelegálny obsah, uvádzaj zdroje, nesťahuj obsah bez povolenia</div></div></div>
+        <div class="comp-card"><div class="comp-icon icon-active">🚫</div><div><div class="name">Zákaz spamu</div><div class="desc">Neposielaj nevyžiadané správy, reťazové e-maily ani hromadné reklamy</div></div></div>
+        <div class="comp-card"><div class="comp-icon icon-active">🤔</div><div><div class="name">Overovanie informácií</div><div class="desc">Nešír nepravdivé správy a hoaxy, overuj zdroje pred zdieľaním</div></div></div>
+        <div class="comp-card"><div class="comp-icon icon-active">💬</div><div><div class="name">Vhodný jazyk</div><div class="desc">Nepíš celé slová VEĽKÝMI PÍSMENAMI (znamená krik), používaj správnu interpunkciu</div></div></div>
+      </div>
+    </div>
+
+    <!-- 3a -->
+    <div class="uloha-block" id="t4-3a">
+      <div class="uloha-label">📌 3a</div>
+      <h3>Výpočet času prenosu súboru 8 GB</h3>
+      <div class="definition-box">
+        Veľkosť súboru: <strong>8 GB</strong> &nbsp;|&nbsp; Download: <strong>4 Mb/s</strong> &nbsp;|&nbsp; Upload: <strong>1 MB/s</strong>
+        <br><small style="opacity:0.8;">Pozor: 1 MB/s = 8 Mb/s &nbsp;·&nbsp; Mb = megabit, MB = megabajt</small>
+      </div>
+      <div class="two-col">
+        <div class="card" style="margin-bottom:0;">
+          <h4>⬇️ Download (sťahovanie) – 4 Mb/s</h4>
+          <p>Prevedieme jednotky: 8 GB = 8 × 1024 MB = 8 192 MB = 65 536 Mb</p>
+          <p>Čas = 65 536 Mb ÷ 4 Mb/s = <strong>16 384 sekúnd</strong></p>
+          <p>= 16 384 ÷ 60 = <strong>≈ 273 minút ≈ 4 hodiny 33 minút</strong></p>
+        </div>
+        <div class="card" style="margin-bottom:0;">
+          <h4>⬆️ Upload (nahrávanie) – 1 MB/s</h4>
+          <p>Prevedieme jednotky: 8 GB = 8 × 1024 MB = 8 192 MB</p>
+          <p>Čas = 8 192 MB ÷ 1 MB/s = <strong>8 192 sekúnd</strong></p>
+          <p>= 8 192 ÷ 60 = <strong>≈ 136 minút ≈ 2 hodiny 16 minút</strong></p>
+        </div>
+      </div>
+      <div class="crossover-note" style="margin-top:14px;">
+        <span>💡</span>
+        <div><strong>Záver:</strong> Napriek tomu, že upload rýchlosť (1 MB/s = 8 Mb/s) je dvojnásobne vyššia ako download (4 Mb/s), výsledný čas uploadu je kratší – pretože obe rýchlosti sú vlastne rovnaké (4 Mb/s = 0,5 MB/s ≠ 1 MB/s). Upload je v tomto prípade 2× rýchlejší.</div>
+      </div>
+    </div>
+
+    <!-- 3b -->
+    <div class="uloha-block" id="t4-3b">
+      <div class="uloha-label">📌 3b</div>
+      <h3>Porovnanie zabezpečenia prístupu k dôležitým údajom</h3>
+      <div class="sustava-grid">
+        <div class="sustava-card">
+          <span class="s-badge s-bin">Klasické</span>
+          <h4>Meno a heslo</h4>
+          <p><strong>Ekonomicky:</strong> Najlacnejšie riešenie – nevyžaduje špeciálny hardware, iba softvér.</p>
+          <p><strong>Technicky:</strong> Jednoduché na implementáciu, ale najzraniteľnejšie – heslá sa dajú uhádnuť, ukradnúť (phishing) alebo prelomiť hrubou silou. Bezpečnosť závisí od zložitosti hesla a používateľa.</p>
+        </div>
+        <div class="sustava-card">
+          <span class="s-badge s-dec">Moderné</span>
+          <h4>Biometrické údaje</h4>
+          <p><strong>Ekonomicky:</strong> Drahšie – vyžaduje špeciálny snímač (odtlačok prsta, tvár, sietnica). Dnes bežné v smartfónoch.</p>
+          <p><strong>Technicky:</strong> Veľmi bezpečné a pohodlné – nedá sa zabudnúť ani zdieľať. Nevýhoda: biometrické údaje sa nedajú zmeniť ak sú ukradnuté, nefunguje pri poranení.</p>
+        </div>
+        <div class="sustava-card">
+          <span class="s-badge s-hex">Moderné</span>
+          <h4>QR kód</h4>
+          <p><strong>Ekonomicky:</strong> Lacné na generovanie, vyžaduje iba smartfón alebo čítačku. Vhodné pre jednorazový prístup.</p>
+          <p><strong>Technicky:</strong> Rýchle a pohodlné, ale QR kód sa dá odfotiť a zneužiť. Vhodné hlavne pre dočasný prístup alebo dvojfaktorovú autentifikáciu (2FA).</p>
+        </div>
+      </div>
+      <div class="card" style="margin-top:14px;">
+        <h4>Záver – čo je najlepšie?</h4>
+        <p>Najvyššiu bezpečnosť poskytuje <strong>kombinácia viacerých metód</strong> – tzv. viacfaktorová autentifikácia (MFA). Napríklad heslo + biometria, alebo heslo + QR/OTP kód. Pre bežné použitie je heslo dostačujúce, pre citlivé dáta (bankovníctvo, zdravotníctvo) je nutná biometria alebo MFA.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ===================== TÉMA 5 ===================== -->
+  <div class="tema-block" id="tema5">
+    <div class="tema-header">
+      <div class="tema-number">5</div>
+      <div class="tema-header-text">
+        <h2>Grafika, obraz & Farebné modely</h2>
+        <p>Hardware a software pri prenose obrazu, grafická karta, kodek, RGB model</p>
+      </div>
+    </div>
+
+    <!-- 1a -->
+    <div class="uloha-block" id="t5-1a">
+      <div class="uloha-label">📌 1a</div>
+      <h3>Hardware a software počítača pri prenose obrazu</h3>
+      <div class="definition-box">
+        Pri prenose a zobrazovaní obrazu v počítači spolupracuje niekoľko hardvérových a softvérových komponentov. Každý z nich plní špecifickú úlohu v celom reťazci od zachytenia po zobrazenie obrazu.
+      </div>
+      <div class="two-col">
+        <div class="card" style="margin-bottom:0;">
+          <h4>🔩 Hardware</h4>
+          <p><strong>Grafická karta (GPU)</strong> – spracováva a renderuje obraz, posiela ho na monitor.</p>
+          <p><strong>Monitor / displej</strong> – zobrazuje výstupný obraz.</p>
+          <p><strong>Webkamera / kamera</strong> – zachytáva obraz a preposiela ho do počítača.</p>
+          <p><strong>Procesor (CPU)</strong> – pomáha pri softvérovom dekódovaní obrazu.</p>
+          <p><strong>RAM</strong> – dočasne ukladá obrazové dáta pri spracovaní.</p>
+          <p><strong>Sieťová karta / WiFi</strong> – prenáša obrazové dáta cez sieť (napr. videohovor).</p>
+        </div>
+        <div class="card" style="margin-bottom:0;">
+          <h4>💻 Software</h4>
+          <p><strong>Ovládače grafickej karty</strong> – komunikácia OS s GPU (napr. NVIDIA, AMD ovládače).</p>
+          <p><strong>Kodeky</strong> – komprimujú a dekomprimujú video (H.264, H.265, VP9).</p>
+          <p><strong>Operačný systém</strong> – správa zobrazovacieho subsystému (DirectX, OpenGL).</p>
+          <p><strong>Video aplikácie</strong> – prehrávače, videokonferenčné aplikácie (Zoom, Teams).</p>
+          <p><strong>Grafické API</strong> – DirectX, Vulkan, OpenGL – rozhranie medzi softvérom a GPU.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 1b -->
+    <div class="uloha-block" id="t5-1b">
+      <div class="uloha-label">📌 1b</div>
+      <h3>Komponenty grafickej karty, rozhrania a zbernice</h3>
+      <div class="components-grid">
+        <div class="comp-card"><div class="comp-icon icon-active">⚡</div><div><div class="name">GPU (čip)</div><div class="desc">Graphics Processing Unit – hlavný procesor karty, vykonáva tisíce výpočtov paralelne pre renderovanie obrazu</div></div></div>
+        <div class="comp-card"><div class="comp-icon icon-active">💾</div><div><div class="name">VRAM</div><div class="desc">Video RAM – rýchla pamäť priamo na karte, ukladá textúry, framebuffer a spracovávané obrazy (4–24 GB)</div></div></div>
+        <div class="comp-card"><div class="comp-icon icon-active">❄️</div><div><div class="name">Chladenie</div><div class="desc">Ventilátor + chladič (heatsink) alebo vodné chladenie – odvádza teplo z GPU počas záťaže</div></div></div>
+        <div class="comp-card"><div class="comp-icon icon-active">🔌</div><div><div class="name">RAMDAC</div><div class="desc">Prevodník digitálneho signálu na analógový pre staršie VGA monitory</div></div></div>
+        <div class="comp-card"><div class="comp-icon icon-active">🖥️</div><div><div class="name">Video BIOS</div><div class="desc">Firmvér karty – obsahuje základné nastavenia a inicializačné rutiny GPU</div></div></div>
+        <div class="comp-card"><div class="comp-icon icon-active">🔋</div><div><div class="name">Napájací konektor</div><div class="desc">PCIe 6/8-pin alebo 16-pin (nový štandard) – privádza dodatočný výkon pre výkonné karty</div></div></div>
+      </div>
+      <div class="card" style="margin-top:14px;">
+        <h4>Rozhrania a výstupy</h4>
+        <p><strong>HDMI</strong> – najbežnejší digitálny výstup pre monitory a TV, prenáša obraz aj zvuk. <strong>DisplayPort</strong> – výkonnejšia alternatíva, podporuje vyššie rozlíšenia a obnovovacie frekvencie. <strong>DVI</strong> – starší digitálny výstup. <strong>VGA</strong> – zastaraný analógový výstup.</p>
+      </div>
+      <div class="card">
+        <h4>Zbernice</h4>
+        <p><strong>PCIe (PCI Express)</strong> – hlavná zbernica pre pripojenie grafickej karty k základnej doske (PCIe x16). Aktuálna verzia PCIe 5.0 dosahuje priepustnosť až 128 GB/s. Staršie rozhrania: AGP, PCI.</p>
+      </div>
+    </div>
+
+    <!-- 1c -->
+    <div class="uloha-block" id="t5-1c">
+      <div class="uloha-label">📌 1c</div>
+      <h3>Optický snímač, kodek, kontajner, stratová kompresia</h3>
+      <div class="sustava-grid">
+        <div class="sustava-card">
+          <span class="s-badge s-bin">Zachytenie</span>
+          <h4>Optický snímač (kamera)</h4>
+          <p>Elektronická súčiastka, ktorá premieňa svetlo na elektrický signál. Najbežnejšie typy sú <strong>CCD</strong> (charge-coupled device) a <strong>CMOS</strong> (complementary metal-oxide-semiconductor). Používa sa v kamerách, telefónoch, webkamerách a skeneroch.</p>
+        </div>
+        <div class="sustava-card">
+          <span class="s-badge s-dec">Kódovanie</span>
+          <h4>Kodek</h4>
+          <p><strong>Kodek</strong> (COder/DECoder) je algoritmus alebo program na komprimovanie a dekomprimovanie multimediálnych dát. Príklady video kodekov: <strong>H.264, H.265 (HEVC), VP9, AV1</strong>. Audio kodeky: MP3, AAC, FLAC.</p>
+        </div>
+        <div class="sustava-card">
+          <span class="s-badge s-hex">Uloženie</span>
+          <h4>Kontajner</h4>
+          <p><strong>Kontajner</strong> (obal súboru) je formát, ktorý združuje video, audio, titulky a metadáta do jedného súboru. Kontajner neurčuje kvalitu – to robí kodek. Príklady: <strong>MP4, MKV, AVI, MOV, WebM</strong>.</p>
+        </div>
+        <div class="sustava-card">
+          <span class="s-badge s-bin">Kompresia</span>
+          <h4>Stratová kompresia</h4>
+          <p><strong>Stratová kompresia</strong> zmenšuje súbor odstránením časti informácií, ktoré ľudské oko/ucho vníma menej. Raz stratené dáta sa nedajú obnoviť. Príklady: JPEG (obrázky), MP3 (zvuk), H.264 (video). Opak je <strong>bezstratová kompresia</strong> (PNG, FLAC).</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2a -->
+    <div class="uloha-block" id="t5-2a">
+      <div class="uloha-label">📌 2a</div>
+      <h3>Farebný model RGB v zobrazovacích jednotkách</h3>
+      <div class="definition-box">
+        <strong>RGB</strong> (Red, Green, Blue) je aditívny farebný model, kde sa farby vytvárajú <em>skladaním (sčítaním) červeného, zeleného a modrého svetla</em>. Čím viac svetla sa pridá, tým svetlejšia farba vzniká – kombinácia všetkých troch na maximum dáva bielu.
+      </div>
+      <div class="card">
+        <h4>Princíp fungovania v zobrazovacích zariadeniach</h4>
+        <p>Každý pixel monitora, televízora alebo displeja sa skladá z troch subpixelov – červeného (R), zeleného (G) a modrého (B). Riadenie intenzity každého subpixelu (0–255) umožňuje zobraziť až <strong>16 777 216 rôznych farieb</strong> (256³).</p>
+        <p>Príklady: <strong>RGB(255, 0, 0)</strong> = čistá červená, <strong>RGB(0, 255, 0)</strong> = čistá zelená, <strong>RGB(255, 255, 0)</strong> = žltá, <strong>RGB(0, 0, 0)</strong> = čierna, <strong>RGB(255, 255, 255)</strong> = biela.</p>
+      </div>
+      <div class="two-col">
+        <div class="card" style="margin-bottom:0;">
+          <h4>🖥️ Použitie RGB</h4>
+          <p>Monitory, televízory, smartfóny, projektory, LED obrazovky – všetky zariadenia, ktoré <em>vyžarujú svetlo</em>, používajú RGB model. Je štandardom pre digitálnu grafiku, web (CSS farby) a fotografiu.</p>
+        </div>
+        <div class="card" style="margin-bottom:0;">
+          <h4>🖨️ Rozdiel oproti CMYK</h4>
+          <p>Tlačiarne používajú <strong>CMYK</strong> (Cyan, Magenta, Yellow, Black) – subtraktívny model pre tlač na papier. RGB sa nedá priamo tlačiť, preto sa pri tlači konvertuje na CMYK.</p>
+        </div>
+      </div>
+      <div class="card" style="margin-top:14px;">
+        <h4>Vizuálna ukážka miešania RGB farieb</h4>
+        <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:8px; align-items:center;">
+          <div style="display:flex;flex-direction:column;align-items:center;gap:4px;">
+            <div style="width:48px;height:48px;border-radius:50%;background:#ff0000;border:1px solid #e2e8f0;"></div>
+            <span style="font-size:12px;font-weight:600;color:#374151;">R</span>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:4px;">
+            <div style="width:48px;height:48px;border-radius:50%;background:#00cc00;border:1px solid #e2e8f0;"></div>
+            <span style="font-size:12px;font-weight:600;color:#374151;">G</span>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:4px;">
+            <div style="width:48px;height:48px;border-radius:50%;background:#0000ff;border:1px solid #e2e8f0;"></div>
+            <span style="font-size:12px;font-weight:600;color:#374151;">B</span>
+          </div>
+          <span style="font-size:18px;color:#94a3b8;">→</span>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:4px;">
+            <div style="width:48px;height:48px;border-radius:50%;background:#ffff00;border:1px solid #e2e8f0;"></div>
+            <span style="font-size:12px;font-weight:600;color:#374151;">R+G</span>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:4px;">
+            <div style="width:48px;height:48px;border-radius:50%;background:#00ffff;border:1px solid #e2e8f0;"></div>
+            <span style="font-size:12px;font-weight:600;color:#374151;">G+B</span>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:4px;">
+            <div style="width:48px;height:48px;border-radius:50%;background:#ff00ff;border:1px solid #e2e8f0;"></div>
+            <span style="font-size:12px;font-weight:600;color:#374151;">R+B</span>
+          </div>
+          <span style="font-size:18px;color:#94a3b8;">→</span>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:4px;">
+            <div style="width:48px;height:48px;border-radius:50%;background:#ffffff;border:1px solid #e2e8f0;"></div>
+            <span style="font-size:12px;font-weight:600;color:#374151;">R+G+B</span>
+          </div>
+        </div>
       </div>
     </div>
 

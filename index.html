@@ -347,6 +347,7 @@
   <a href="#tema3"><span class="num">3</span> Kabeláž & Porovnanie</a>
   <a href="#tema4"><span class="num">4</span> Internet & Bezpečnosť</a>
   <a href="#tema5"><span class="num">5</span> Grafika & Obraz</a>
+  <a href="#tema6"><span class="num">6</span> Booleova algebra & Hradlá</a>
 </nav>
 
 <main>
@@ -1120,6 +1121,380 @@
             <span style="font-size:12px;font-weight:600;color:#374151;">R+G+B</span>
           </div>
         </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ===================== TÉMA 22 ===================== -->
+  <div class="tema-block" id="tema6">
+    <div class="tema-header">
+      <div class="tema-number">6</div>
+      <div class="tema-header-text">
+        <h2>Booleova algebra & Logické obvody</h2>
+        <p>Logické funkcie, hradlá, pravdivostné tabuľky, pamäťové členy, BCD dekodér</p>
+      </div>
+    </div>
+
+    <!-- 22a -->
+    <div class="uloha-block" id="t22-a">
+      <div class="uloha-label">📌 a</div>
+      <h3>Booleova algebra a základné logické funkcie</h3>
+      <div class="definition-box">
+        <strong>Booleova algebra</strong> je matematická sústava pracujúca s hodnotami <em>pravda (1)</em> a <em>nepravda (0)</em>. Definoval ju George Boole v roku 1854. Je základom digitálnej elektroniky a návrhu logických obvodov.
+      </div>
+      <div class="card">
+        <h4>Základné logické funkcie</h4>
+        <p><strong>NOT (negácia)</strong> – invertuje vstup: 0→1, 1→0. Zápis: <code>¬A</code> alebo <code>Ā</code></p>
+        <p><strong>AND (logický súčin)</strong> – výstup je 1 iba ak sú všetky vstupy 1. Zápis: <code>A · B</code></p>
+        <p><strong>OR (logický súčet)</strong> – výstup je 1 ak aspoň jeden vstup je 1. Zápis: <code>A + B</code></p>
+        <p><strong>NAND</strong> – negácia AND. Výstup je 0 iba ak sú všetky vstupy 1. Zápis: <code>¬(A · B)</code></p>
+        <p><strong>NOR</strong> – negácia OR. Výstup je 1 iba ak sú všetky vstupy 0. Zápis: <code>¬(A + B)</code></p>
+        <p><strong>XOR (exkluzívny OR)</strong> – výstup je 1 ak sú vstupy rôzne. Zápis: <code>A ⊕ B</code></p>
+        <p><strong>XNOR</strong> – negácia XOR. Výstup je 1 ak sú vstupy rovnaké. Zápis: <code>¬(A ⊕ B)</code></p>
+      </div>
+    </div>
+
+    <!-- 22b -->
+    <div class="uloha-block" id="t22-b">
+      <div class="uloha-label">📌 b</div>
+      <h3>Kombinačný a sekvenčný logický obvod</h3>
+      <div class="two-col">
+        <div class="card" style="margin-bottom:0;">
+          <h4>⚡ Kombinačný logický obvod</h4>
+          <p>Výstup závisí <strong>iba od aktuálnych vstupov</strong> – obvod nemá pamäť. Rovnaká kombinácia vstupov vždy dá rovnaký výstup.</p>
+          <p>Príklady: logické hradlá, sčítačky, multiplexory, dekodéry, komparátory.</p>
+        </div>
+        <div class="card" style="margin-bottom:0;">
+          <h4>🔄 Sekvenčný logický obvod</h4>
+          <p>Výstup závisí od aktuálnych vstupov <strong>aj od predchádzajúceho stavu</strong> (má pamäť). Obsahuje spätnoväzbové slučky.</p>
+          <p>Príklady: klopné obvody (RS, JK, D, T), registre, čítače, pamäte RAM.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 22c – schematické značky -->
+    <div class="uloha-block" id="t22-c">
+      <div class="uloha-label">📌 c</div>
+      <h3>Schematické značky základných logických hradiel</h3>
+      <div style="display:grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap:14px; margin-top:12px;">
+
+        <!-- NOT -->
+        <div class="card" style="margin-bottom:0; text-align:center;">
+          <h4 style="margin-bottom:12px;">NOT (Invertor)</h4>
+          <svg width="120" height="60" viewBox="0 0 120 60" style="display:block;margin:0 auto;">
+            <line x1="10" y1="30" x2="30" y2="30" stroke="#374151" stroke-width="2"/>
+            <polygon points="30,10 30,50 80,30" fill="none" stroke="#1a6efc" stroke-width="2"/>
+            <circle cx="84" cy="30" r="5" fill="none" stroke="#1a6efc" stroke-width="2"/>
+            <line x1="89" y1="30" x2="110" y2="30" stroke="#374151" stroke-width="2"/>
+            <text x="10" y="55" font-size="10" fill="#6b7280" font-family="monospace">A</text>
+            <text x="100" y="55" font-size="10" fill="#6b7280" font-family="monospace">Ā</text>
+          </svg>
+          <p style="font-size:12px;color:#6b7280;margin-top:8px;">Výstup = negácia vstupu</p>
+        </div>
+
+        <!-- AND -->
+        <div class="card" style="margin-bottom:0; text-align:center;">
+          <h4 style="margin-bottom:12px;">AND</h4>
+          <svg width="120" height="70" viewBox="0 0 120 70" style="display:block;margin:0 auto;">
+            <line x1="10" y1="22" x2="35" y2="22" stroke="#374151" stroke-width="2"/>
+            <line x1="10" y1="48" x2="35" y2="48" stroke="#374151" stroke-width="2"/>
+            <path d="M35,10 L35,60 Q85,60 85,35 Q85,10 35,10 Z" fill="none" stroke="#1a6efc" stroke-width="2"/>
+            <line x1="85" y1="35" x2="110" y2="35" stroke="#374151" stroke-width="2"/>
+            <text x="5" y="19" font-size="10" fill="#6b7280" font-family="monospace">A</text>
+            <text x="5" y="45" font-size="10" fill="#6b7280" font-family="monospace">B</text>
+            <text x="100" y="50" font-size="10" fill="#6b7280" font-family="monospace">Y</text>
+          </svg>
+          <p style="font-size:12px;color:#6b7280;margin-top:4px;">Y = A · B</p>
+        </div>
+
+        <!-- OR -->
+        <div class="card" style="margin-bottom:0; text-align:center;">
+          <h4 style="margin-bottom:12px;">OR</h4>
+          <svg width="120" height="70" viewBox="0 0 120 70" style="display:block;margin:0 auto;">
+            <line x1="10" y1="22" x2="33" y2="22" stroke="#374151" stroke-width="2"/>
+            <line x1="10" y1="48" x2="33" y2="48" stroke="#374151" stroke-width="2"/>
+            <path d="M28,10 Q45,35 28,60 Q55,60 80,35 Q55,10 28,10 Z" fill="none" stroke="#1a6efc" stroke-width="2"/>
+            <line x1="80" y1="35" x2="110" y2="35" stroke="#374151" stroke-width="2"/>
+            <text x="5" y="19" font-size="10" fill="#6b7280" font-family="monospace">A</text>
+            <text x="5" y="45" font-size="10" fill="#6b7280" font-family="monospace">B</text>
+            <text x="100" y="50" font-size="10" fill="#6b7280" font-family="monospace">Y</text>
+          </svg>
+          <p style="font-size:12px;color:#6b7280;margin-top:4px;">Y = A + B</p>
+        </div>
+
+        <!-- NAND -->
+        <div class="card" style="margin-bottom:0; text-align:center;">
+          <h4 style="margin-bottom:12px;">NAND</h4>
+          <svg width="120" height="70" viewBox="0 0 120 70" style="display:block;margin:0 auto;">
+            <line x1="10" y1="22" x2="35" y2="22" stroke="#374151" stroke-width="2"/>
+            <line x1="10" y1="48" x2="35" y2="48" stroke="#374151" stroke-width="2"/>
+            <path d="M35,10 L35,60 Q80,60 80,35 Q80,10 35,10 Z" fill="none" stroke="#1a6efc" stroke-width="2"/>
+            <circle cx="84" cy="35" r="4" fill="none" stroke="#1a6efc" stroke-width="2"/>
+            <line x1="88" y1="35" x2="110" y2="35" stroke="#374151" stroke-width="2"/>
+            <text x="5" y="19" font-size="10" fill="#6b7280" font-family="monospace">A</text>
+            <text x="5" y="45" font-size="10" fill="#6b7280" font-family="monospace">B</text>
+            <text x="100" y="50" font-size="10" fill="#6b7280" font-family="monospace">Y</text>
+          </svg>
+          <p style="font-size:12px;color:#6b7280;margin-top:4px;">Y = ¬(A · B)</p>
+        </div>
+
+        <!-- NOR -->
+        <div class="card" style="margin-bottom:0; text-align:center;">
+          <h4 style="margin-bottom:12px;">NOR</h4>
+          <svg width="120" height="70" viewBox="0 0 120 70" style="display:block;margin:0 auto;">
+            <line x1="10" y1="22" x2="33" y2="22" stroke="#374151" stroke-width="2"/>
+            <line x1="10" y1="48" x2="33" y2="48" stroke="#374151" stroke-width="2"/>
+            <path d="M28,10 Q45,35 28,60 Q55,60 76,35 Q55,10 28,10 Z" fill="none" stroke="#1a6efc" stroke-width="2"/>
+            <circle cx="80" cy="35" r="4" fill="none" stroke="#1a6efc" stroke-width="2"/>
+            <line x1="84" y1="35" x2="110" y2="35" stroke="#374151" stroke-width="2"/>
+            <text x="5" y="19" font-size="10" fill="#6b7280" font-family="monospace">A</text>
+            <text x="5" y="45" font-size="10" fill="#6b7280" font-family="monospace">B</text>
+            <text x="100" y="50" font-size="10" fill="#6b7280" font-family="monospace">Y</text>
+          </svg>
+          <p style="font-size:12px;color:#6b7280;margin-top:4px;">Y = ¬(A + B)</p>
+        </div>
+
+        <!-- XOR -->
+        <div class="card" style="margin-bottom:0; text-align:center;">
+          <h4 style="margin-bottom:12px;">XOR</h4>
+          <svg width="120" height="70" viewBox="0 0 120 70" style="display:block;margin:0 auto;">
+            <line x1="10" y1="22" x2="35" y2="22" stroke="#374151" stroke-width="2"/>
+            <line x1="10" y1="48" x2="35" y2="48" stroke="#374151" stroke-width="2"/>
+            <path d="M24,10 Q41,35 24,60" fill="none" stroke="#1a6efc" stroke-width="2"/>
+            <path d="M30,10 Q47,35 30,60 Q57,60 80,35 Q57,10 30,10 Z" fill="none" stroke="#1a6efc" stroke-width="2"/>
+            <line x1="80" y1="35" x2="110" y2="35" stroke="#374151" stroke-width="2"/>
+            <text x="5" y="19" font-size="10" fill="#6b7280" font-family="monospace">A</text>
+            <text x="5" y="45" font-size="10" fill="#6b7280" font-family="monospace">B</text>
+            <text x="100" y="50" font-size="10" fill="#6b7280" font-family="monospace">Y</text>
+          </svg>
+          <p style="font-size:12px;color:#6b7280;margin-top:4px;">Y = A ⊕ B</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Úloha 2a – pravdivostné tabuľky -->
+    <div class="uloha-block" id="t22-2a">
+      <div class="uloha-label">📌 2a</div>
+      <h3>Pravdivostné tabuľky základných logických funkcií</h3>
+      <div style="display:grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap:16px; margin-top:12px;">
+
+        <!-- NOT -->
+        <div class="ip-table-wrap">
+          <div style="padding:10px 16px; background:#eff6ff; border-bottom:1px solid var(--border); font-weight:700; font-size:0.9rem; color:#1e3a5f;">NOT – negácia</div>
+          <table class="ip">
+            <thead><tr><th>A</th><th>Y = Ā</th></tr></thead>
+            <tbody>
+              <tr><td>0</td><td><strong>1</strong></td></tr>
+              <tr><td>1</td><td><strong>0</strong></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- AND -->
+        <div class="ip-table-wrap">
+          <div style="padding:10px 16px; background:#eff6ff; border-bottom:1px solid var(--border); font-weight:700; font-size:0.9rem; color:#1e3a5f;">AND – logický súčin</div>
+          <table class="ip">
+            <thead><tr><th>A</th><th>B</th><th>Y = A·B</th></tr></thead>
+            <tbody>
+              <tr><td>0</td><td>0</td><td><strong>0</strong></td></tr>
+              <tr><td>0</td><td>1</td><td><strong>0</strong></td></tr>
+              <tr><td>1</td><td>0</td><td><strong>0</strong></td></tr>
+              <tr><td>1</td><td>1</td><td><strong>1</strong></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- OR -->
+        <div class="ip-table-wrap">
+          <div style="padding:10px 16px; background:#eff6ff; border-bottom:1px solid var(--border); font-weight:700; font-size:0.9rem; color:#1e3a5f;">OR – logický súčet</div>
+          <table class="ip">
+            <thead><tr><th>A</th><th>B</th><th>Y = A+B</th></tr></thead>
+            <tbody>
+              <tr><td>0</td><td>0</td><td><strong>0</strong></td></tr>
+              <tr><td>0</td><td>1</td><td><strong>1</strong></td></tr>
+              <tr><td>1</td><td>0</td><td><strong>1</strong></td></tr>
+              <tr><td>1</td><td>1</td><td><strong>1</strong></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- NAND -->
+        <div class="ip-table-wrap">
+          <div style="padding:10px 16px; background:#eff6ff; border-bottom:1px solid var(--border); font-weight:700; font-size:0.9rem; color:#1e3a5f;">NAND</div>
+          <table class="ip">
+            <thead><tr><th>A</th><th>B</th><th>Y = ¬(A·B)</th></tr></thead>
+            <tbody>
+              <tr><td>0</td><td>0</td><td><strong>1</strong></td></tr>
+              <tr><td>0</td><td>1</td><td><strong>1</strong></td></tr>
+              <tr><td>1</td><td>0</td><td><strong>1</strong></td></tr>
+              <tr><td>1</td><td>1</td><td><strong>0</strong></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- NOR -->
+        <div class="ip-table-wrap">
+          <div style="padding:10px 16px; background:#eff6ff; border-bottom:1px solid var(--border); font-weight:700; font-size:0.9rem; color:#1e3a5f;">NOR</div>
+          <table class="ip">
+            <thead><tr><th>A</th><th>B</th><th>Y = ¬(A+B)</th></tr></thead>
+            <tbody>
+              <tr><td>0</td><td>0</td><td><strong>1</strong></td></tr>
+              <tr><td>0</td><td>1</td><td><strong>0</strong></td></tr>
+              <tr><td>1</td><td>0</td><td><strong>0</strong></td></tr>
+              <tr><td>1</td><td>1</td><td><strong>0</strong></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- XOR -->
+        <div class="ip-table-wrap">
+          <div style="padding:10px 16px; background:#eff6ff; border-bottom:1px solid var(--border); font-weight:700; font-size:0.9rem; color:#1e3a5f;">XOR – exkluzívny OR</div>
+          <table class="ip">
+            <thead><tr><th>A</th><th>B</th><th>Y = A⊕B</th></tr></thead>
+            <tbody>
+              <tr><td>0</td><td>0</td><td><strong>0</strong></td></tr>
+              <tr><td>0</td><td>1</td><td><strong>1</strong></td></tr>
+              <tr><td>1</td><td>0</td><td><strong>1</strong></td></tr>
+              <tr><td>1</td><td>1</td><td><strong>0</strong></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Úloha 2b -->
+    <div class="uloha-block" id="t22-2b">
+      <div class="uloha-label">📌 2b</div>
+      <h3>Princíp realizácie základných logických členov</h3>
+      <div class="definition-box">
+        Logické hradlá sú fyzicky realizované pomocou <strong>tranzistorov</strong> – polovodičových súčiastok, ktoré fungujú ako elektronické spínače (zapnuté = 1, vypnuté = 0).
+      </div>
+      <div class="card">
+        <h4>Technológie realizácie</h4>
+        <p><strong>TTL (Transistor-Transistor Logic)</strong> – klasická technológia využívajúca bipolárne tranzistory. Pracuje s napätím 5V, rýchla, ale vyššia spotreba energie.</p>
+        <p><strong>CMOS (Complementary Metal-Oxide-Semiconductor)</strong> – moderná technológia využívajúca dvojice N-MOS a P-MOS tranzistorov. Veľmi nízka spotreba energie, dnes dominantná technológia (procesory, pamäte, FPGA).</p>
+        <p><strong>Princíp NOT v CMOS:</strong> Dva tranzistory zapojené v sérii – keď je vstup vysoký (1), P-MOS sa vypne a N-MOS zapne → výstup je nízky (0). Keď je vstup nízky (0), P-MOS sa zapne → výstup je vysoký (1).</p>
+      </div>
+      <div class="two-col">
+        <div class="card" style="margin-bottom:0;">
+          <h4>⚡ Logická úroveň 1</h4>
+          <p>Reprezentovaná <strong>vysokým napätím</strong> – typicky 3.3V alebo 5V (TTL), 1.8V (moderné CMOS). Tranzistor je otvorený (vodivý).</p>
+        </div>
+        <div class="card" style="margin-bottom:0;">
+          <h4>⬛ Logická úroveň 0</h4>
+          <p>Reprezentovaná <strong>nízkym napätím</strong> – typicky 0V (GND). Tranzistor je uzavretý (nevodivý).</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Úloha 2c – prevod -->
+    <div class="uloha-block" id="t22-2c">
+      <div class="uloha-label">📌 2c</div>
+      <h3>Prevod číselných sústav</h3>
+      <div class="two-col">
+        <div class="card" style="margin-bottom:0;">
+          <h4>Binárne → Desatinné: (10101110)₂</h4>
+          <p>Každá cifra sa násobí mocninou 2 podľa pozície (sprava, od 0):</p>
+          <div style="font-family:monospace; font-size:0.88rem; background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:12px; margin-top:8px; line-height:2;">
+            1×2⁷ = 1×128 = 128<br>
+            0×2⁶ = 0×64 &nbsp;= 0<br>
+            1×2⁵ = 1×32 &nbsp;= 32<br>
+            0×2⁴ = 0×16 &nbsp;= 0<br>
+            1×2³ = 1×8 &nbsp;&nbsp;= 8<br>
+            1×2² = 1×4 &nbsp;&nbsp;= 4<br>
+            1×2¹ = 1×2 &nbsp;&nbsp;= 2<br>
+            0×2⁰ = 0×1 &nbsp;&nbsp;= 0<br>
+            <strong>Súčet = 128+32+8+4+2 = 174</strong>
+          </div>
+          <p style="margin-top:10px;">Výsledok: <strong>(10101110)₂ = (174)₁₀</strong></p>
+        </div>
+        <div class="card" style="margin-bottom:0;">
+          <h4>Desatinné → Hexadecimálne: (142)₁₀</h4>
+          <p>Delíme číslo 16 a zapisujeme zvyšky:</p>
+          <div style="font-family:monospace; font-size:0.88rem; background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:12px; margin-top:8px; line-height:2;">
+            142 ÷ 16 = 8, zvyšok <strong>14 → E</strong><br>
+            8 &nbsp;&nbsp;÷ 16 = 0, zvyšok <strong>8 → 8</strong><br>
+            <br>
+            Čítame zvyšky zdola nahor:<br>
+            <strong>8E</strong>
+          </div>
+          <p style="margin-top:10px;">Výsledok: <strong>(142)₁₀ = (8E)₁₆</strong></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Úloha 3a – pamäťové obvody -->
+    <div class="uloha-block" id="t22-3a">
+      <div class="uloha-label">📌 3a</div>
+      <h3>Pamäťové logické členy – klopné obvody</h3>
+      <div class="definition-box">
+        <strong>Klopný obvod (flip-flop)</strong> je základný pamäťový prvok digitálnych obvodov. Dokáže uchovať jeden bit informácie (0 alebo 1) a zmeniť ho pri riadenom vstupnom signáli.
+      </div>
+      <div class="card">
+        <h4>RS klopný obvod (Set-Reset)</h4>
+        <p>Má dva vstupy: <strong>S (Set)</strong> – nastaví výstup na 1, a <strong>R (Reset)</strong> – nastaví výstup na 0. Stav S=1, R=1 je zakázaný (nedefinovaný výstup). RS obvod si pamätá posledný nastavený stav.</p>
+        <div class="ip-table-wrap" style="margin-top:10px;">
+          <table class="ip">
+            <thead><tr><th>S</th><th>R</th><th>Q (výstup)</th><th>Stav</th></tr></thead>
+            <tbody>
+              <tr><td>0</td><td>0</td><td>Q (bez zmeny)</td><td>Pamäť</td></tr>
+              <tr><td>1</td><td>0</td><td>1</td><td>Set</td></tr>
+              <tr><td>0</td><td>1</td><td>0</td><td>Reset</td></tr>
+              <tr><td>1</td><td>1</td><td>–</td><td>Zakázaný stav</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="components-grid" style="margin-top:14px;">
+        <div class="comp-card"><div class="comp-icon icon-active">🔲</div><div><div class="name">D klopný obvod</div><div class="desc">Vstup D sa pri hodinovom impulze (CLK) prenesie na výstup Q. Jednoduchý, používa sa v registroch a pamätiach.</div></div></div>
+        <div class="comp-card"><div class="comp-icon icon-active">🔲</div><div><div class="name">JK klopný obvod</div><div class="desc">Vylepšený RS – stav J=1, K=1 prepína (toggle) výstup. Najuniverzálnejší klopný obvod.</div></div></div>
+        <div class="comp-card"><div class="comp-icon icon-active">🔲</div><div><div class="name">T klopný obvod</div><div class="desc">Toggle – pri každom hodinovom impulze prepína výstup medzi 0 a 1. Základ binárnych čítačov.</div></div></div>
+      </div>
+    </div>
+
+    <!-- Úloha 3b – BCD dekodér -->
+    <div class="uloha-block" id="t22-3b">
+      <div class="uloha-label">📌 3b</div>
+      <h3>Dekodér BCD</h3>
+      <div class="definition-box">
+        <strong>BCD</strong> (Binary Coded Decimal) je kód, kde každá desatinná cifra (0–9) je zakódovaná ako 4-bitové binárne číslo. <strong>BCD dekodér</strong> prevádza tento 4-bitový kód na signály pre zobrazenie na 7-segmentovom displeji.
+      </div>
+      <div class="card">
+        <h4>Princíp 7-segmentového BCD dekodéra</h4>
+        <p>7-segmentový displej má 7 segmentov (a–g) usporiadaných do tvaru číslice 8. BCD dekodér prijíma 4-bitový vstup (B3 B2 B1 B0) a aktivuje správne segmenty pre zobrazenie číslice 0–9.</p>
+        <p>Napríklad pre cifru <strong>3</strong>: vstup je <code>0011</code>, dekodér zapne segmenty a, b, c, d, g – vznikne tvar „3" na displeji.</p>
+      </div>
+      <div class="ip-table-wrap" style="margin-top:10px;">
+        <table class="ip">
+          <thead><tr><th>Cifra</th><th>B3</th><th>B2</th><th>B1</th><th>B0</th><th>Aktívne segmenty</th></tr></thead>
+          <tbody>
+            <tr><td><strong>0</strong></td><td>0</td><td>0</td><td>0</td><td>0</td><td>a, b, c, d, e, f</td></tr>
+            <tr><td><strong>1</strong></td><td>0</td><td>0</td><td>0</td><td>1</td><td>b, c</td></tr>
+            <tr><td><strong>2</strong></td><td>0</td><td>0</td><td>1</td><td>0</td><td>a, b, d, e, g</td></tr>
+            <tr><td><strong>3</strong></td><td>0</td><td>0</td><td>1</td><td>1</td><td>a, b, c, d, g</td></tr>
+            <tr><td><strong>4</strong></td><td>0</td><td>1</td><td>0</td><td>0</td><td>b, c, f, g</td></tr>
+            <tr><td><strong>9</strong></td><td>1</td><td>0</td><td>0</td><td>1</td><td>a, b, c, d, f, g</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Úloha 3c -->
+    <div class="uloha-block" id="t22-3c">
+      <div class="uloha-label">📌 3c</div>
+      <h3>Príklady využitia logických obvodov</h3>
+      <div class="components-grid">
+        <div class="comp-card"><div class="comp-icon icon-active">💻</div><div><div class="name">Procesory (CPU/GPU)</div><div class="desc">Miliardy logických hradiel vykonávajú aritmetické a logické operácie – základ každého počítača</div></div></div>
+        <div class="comp-card"><div class="comp-icon icon-active">💾</div><div><div class="name">Pamäte RAM/ROM</div><div class="desc">Klopné obvody a kondenzátory uchovávajú bity – každá bunka je logický prvok</div></div></div>
+        <div class="comp-card"><div class="comp-icon icon-active">🔢</div><div><div class="name">Kalkulačky</div><div class="desc">Sčítačky, odčítačky a iné kombinačné obvody realizujú matematické operácie</div></div></div>
+        <div class="comp-card"><div class="comp-icon icon-active">🚦</div><div><div class="name">Riadiace systémy</div><div class="desc">Semaforové systémy, priemyselné PLC automaty, výťahové riadiace jednotky</div></div></div>
+        <div class="comp-card"><div class="comp-icon icon-active">📟</div><div><div class="name">Digitálne displeje</div><div class="desc">BCD dekodéry riadia 7-segmentové displeje v hodinách, kalkulačkách a meracích prístrojoch</div></div></div>
+        <div class="comp-card"><div class="comp-icon icon-active">🔐</div><div><div class="name">Šifrovanie</div><div class="desc">XOR hradlá sú základom mnohých šifrovacích algoritmov (AES, SHA)</div></div></div>
+        <div class="comp-card"><div class="comp-icon icon-active">📡</div><div><div class="name">Telekomunikácie</div><div class="desc">Multiplexory, demultiplexory a kódovacie obvody v digitálnych prenosových systémoch</div></div></div>
+        <div class="comp-card"><div class="comp-icon icon-active">🏠</div><div><div class="name">Inteligentné domy</div><div class="desc">Logické obvody v mikrokontroléroch riadia osvetlenie, vykurovanie a bezpečnostné systémy</div></div></div>
       </div>
     </div>
 

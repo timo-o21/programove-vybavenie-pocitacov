@@ -352,6 +352,9 @@
   <a href="#tema8"><span class="num">8</span> Matičná doska & Procesor</a>
   <a href="#tema9"><span class="num">9</span> Bezdrôtové siete</a>
   <a href="#tema10"><span class="num">10</span> Napájanie & Ohmov zákon</a>
+  <a href="#tema11"><span class="num">11</span> Pamäte počítača</a>
+  <a href="#tema12"><span class="num">12</span> Pevné disky & RAID</a>
+  <a href="#tema13"><span class="num">13</span> Elektrické siete & BOZP</a>
 </nav>
 
 <main>
@@ -2531,10 +2534,909 @@
 
   </div>
 
+  <!-- ===================== TÉMA 11 ===================== -->
+  <div class="tema-block" id="tema11">
+    <div class="tema-header">
+      <div class="tema-number">11</div>
+      <div class="tema-header-text">
+        <h2>Pamäte počítača</h2>
+        <p>Typy pamätí, ROM, RAM, statická/dynamická pamäť, jednotky, prevody a ceny médií</p>
+      </div>
+    </div>
+
+    <!-- 1a -->
+    <div class="uloha-block" id="t11-1a">
+      <div class="uloha-label">📌 1a</div>
+      <h3>Počítačová pamäť a BKO</h3>
+      <div class="definition-box">
+        <strong>Počítačová pamäť</strong> je zariadenie alebo súčasť počítača slúžiaca na ukladanie, uchovávanie a čítanie dát a programových inštrukcií. Bez pamäte by počítač nemohol uchovávať ani spracovávať žiadne informácie.
+      </div>
+      <div class="card">
+        <h4>BKO – Binárna Kódová Organizácia</h4>
+        <p><strong>BKO</strong> (Binárna Kódová Organizácia) opisuje, akým spôsobom sú dáta fyzicky uložené v pamäti. Pamäť je organizovaná do <strong>buniek</strong>, kde každá bunka uchováva určitý počet bitov (najčastejšie 8 bitov = 1 bajt). Každá bunka má svoju jedinečnú <strong>adresu</strong>, pomocou ktorej ju procesor dokáže nájsť a prečítať alebo zapísať dáta.</p>
+        <p>Celková kapacita pamäte závisí od počtu buniek a ich veľkosti: <strong>Kapacita = Počet adries × Šírka dátovej zbernice</strong>.</p>
+      </div>
+    </div>
+
+    <!-- 1b -->
+    <div class="uloha-block" id="t11-1b">
+      <div class="uloha-label">📌 1b</div>
+      <h3>Jednotky kapacity pamäte</h3>
+      <div class="ip-table-wrap">
+        <table class="ip">
+          <thead>
+            <tr><th>Jednotka</th><th>Skratka</th><th>Hodnota</th><th>Príklad použitia</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Bit</strong></td><td>b</td><td>Najmenšia jednotka – hodnota 0 alebo 1</td><td>Rýchlosť internetu (Mb/s)</td></tr>
+            <tr><td><strong>Bajt</strong></td><td>B</td><td>8 bitov</td><td>Základná jednotka kapacity</td></tr>
+            <tr><td><strong>Kilobajt</strong></td><td>kB</td><td>1 024 B</td><td>Malé textové súbory</td></tr>
+            <tr><td><strong>Megabajt</strong></td><td>MB</td><td>1 024 kB = 1 048 576 B</td><td>Fotografie, MP3</td></tr>
+            <tr><td><strong>Gigabajt</strong></td><td>GB</td><td>1 024 MB</td><td>Filmy, RAM, SSD</td></tr>
+            <tr><td><strong>Terabajt</strong></td><td>TB</td><td>1 024 GB</td><td>Pevné disky, zálohy</td></tr>
+            <tr><td><strong>Petabajt</strong></td><td>PB</td><td>1 024 TB</td><td>Dátové centrá</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- 1c -->
+    <div class="uloha-block" id="t11-1c">
+      <div class="uloha-label">📌 1c</div>
+      <h3>Rozdelenie pamätí podľa veľkosti a prenosovej rýchlosti</h3>
+      <div class="definition-box">
+        Pamäte v počítači tvoria <strong>hierarchiu</strong> – čím rýchlejšia pamäť, tým je menšia a drahšia. Pomalšie pamäte sú lacnejšie a majú väčšiu kapacitu.
+      </div>
+      <div class="ip-table-wrap">
+        <table class="ip">
+          <thead>
+            <tr><th>Úroveň</th><th>Typ pamäte</th><th>Veľkosť</th><th>Rýchlosť</th><th>Umiestnenie</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="ip-class ip-a">1</span></td>
+              <td><strong>Registre CPU</strong></td>
+              <td>bajty – desiatky B</td>
+              <td>1 cyklus CPU (~ns)</td>
+              <td>Priamo v CPU</td>
+            </tr>
+            <tr>
+              <td><span class="ip-class ip-a">2</span></td>
+              <td><strong>Cache L1/L2/L3</strong></td>
+              <td>KB – desiatky MB</td>
+              <td>1–50 cyklov</td>
+              <td>V CPU čipe</td>
+            </tr>
+            <tr>
+              <td><span class="ip-class ip-b">3</span></td>
+              <td><strong>RAM (operačná pamäť)</strong></td>
+              <td>GB (4–128 GB)</td>
+              <td>~100 ns</td>
+              <td>DIMM sloty na MB</td>
+            </tr>
+            <tr>
+              <td><span class="ip-class ip-b">4</span></td>
+              <td><strong>SSD disk</strong></td>
+              <td>stovky GB – TB</td>
+              <td>~100 µs</td>
+              <td>M.2 / SATA slot</td>
+            </tr>
+            <tr>
+              <td><span class="ip-class ip-c">5</span></td>
+              <td><strong>HDD disk</strong></td>
+              <td>TB</td>
+              <td>~10 ms</td>
+              <td>SATA konektor</td>
+            </tr>
+            <tr>
+              <td><span class="ip-class ip-c">6</span></td>
+              <td><strong>Optické / páskové</strong></td>
+              <td>GB – TB</td>
+              <td>sekundy</td>
+              <td>Externé / archív</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- 2a -->
+    <div class="uloha-block" id="t11-2a">
+      <div class="uloha-label">📌 2a</div>
+      <h3>Operačná (hlavná) pamäť počítača</h3>
+      <div class="definition-box">
+        <strong>Operačná pamäť</strong> (RAM – Random Access Memory) je hlavná pracovná pamäť počítača. Uchováva dáta a programy, s ktorými CPU práve pracuje. Je <em>volatilná</em> – po vypnutí napájania sa jej obsah stratí.
+      </div>
+      <div class="sustava-grid">
+        <div class="sustava-card">
+          <span class="s-badge s-bin">Volatilná</span>
+          <h4>DRAM (Dynamic RAM)</h4>
+          <p>Najpoužívanejší typ operačnej pamäte. Každý bit je uložený v kondenzátore, ktorý sa musí pravidelne obnovovať (refresh). Lacná, veľká kapacita. Používa sa ako hlavná RAM v PC.</p>
+          <p><strong>Generácie:</strong> DDR, DDR2, DDR3, DDR4, DDR5</p>
+        </div>
+        <div class="sustava-card">
+          <span class="s-badge s-bin">Volatilná</span>
+          <h4>SRAM (Static RAM)</h4>
+          <p>Bit je uložený v klopnom obvode – nepotrebuje refresh. Rýchlejšia a spoľahlivejšia ako DRAM, ale drahšia a menšia kapacita. Používa sa ako cache pamäť v CPU.</p>
+        </div>
+        <div class="sustava-card">
+          <span class="s-badge s-dec">Nevolatilná</span>
+          <h4>ROM (Read Only Memory)</h4>
+          <p>Pamäť len na čítanie – obsah je trvalý a nezávisí od napájania. Uchováva firmvér (BIOS/UEFI). Existuje viacero typov podľa možnosti prepisu.</p>
+        </div>
+        <div class="sustava-card">
+          <span class="s-badge s-dec">Nevolatilná</span>
+          <h4>Flash pamäť</h4>
+          <p>Moderná nevolatilná pamäť – dá sa mazať a prepísať elektricky. Základ pre SSD disky, USB flash disky, SD karty a pamäť v smartfónoch.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2b -->
+    <div class="uloha-block" id="t11-2b">
+      <div class="uloha-label">📌 2b</div>
+      <h3>Modifikácie pamätí ROM – zmena obsahu</h3>
+      <div class="ip-table-wrap">
+        <table class="ip">
+          <thead>
+            <tr><th>Typ ROM</th><th>Plný názov</th><th>Zmena obsahu</th><th>Poznámka</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>ROM</strong></td>
+              <td>Read Only Memory</td>
+              <td>❌ Nedá sa zmeniť – obsah zapísaný pri výrobe</td>
+              <td>Najstarší typ, len na čítanie, trvalý obsah</td>
+            </tr>
+            <tr>
+              <td><strong>PROM</strong></td>
+              <td>Programmable ROM</td>
+              <td>✏️ Jednorázový zápis špeciálnym zariadením (programátorom)</td>
+              <td>Prázdna z výroby, používateľ ju naprogramuje raz</td>
+            </tr>
+            <tr>
+              <td><strong>EPROM</strong></td>
+              <td>Erasable PROM</td>
+              <td>☀️ Vymazanie UV svetlom (15–20 min), potom nový zápis programátorom</td>
+              <td>Má sklenené okienko pre UV svetlo, pomalé mazanie</td>
+            </tr>
+            <tr>
+              <td><strong>EEPROM</strong></td>
+              <td>Electrically Erasable PROM</td>
+              <td>⚡ Elektrické vymazanie a prepis byte po byte</td>
+              <td>Pomalší zápis, obmedzený počet cyklov (~100 000)</td>
+            </tr>
+            <tr>
+              <td><strong>Flash</strong></td>
+              <td>Flash EEPROM</td>
+              <td>⚡ Elektrické vymazanie a prepis po blokoch – rýchlejší ako EEPROM</td>
+              <td>Základ SSD, USB kľúčov, SD kariet, BIOS čipov</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- 2c -->
+    <div class="uloha-block" id="t11-2c">
+      <div class="uloha-label">📌 2c</div>
+      <h3>Statická vs. dynamická pamäť</h3>
+      <div class="two-col">
+        <div class="card" style="margin-bottom:0;">
+          <h4>⚡ Statická pamäť (SRAM)</h4>
+          <p>Každý bit je uložený v <strong>klopnom obvode</strong> zo 4–6 tranzistorov. Pokiaľ je napájanie, dáta zostávajú bez nutnosti obnovovania.</p>
+          <p><strong>Vlastnosti:</strong> Veľmi rýchla (1–10 ns), nízka spotreba v pohotovostnom stave, drahá, malá hustota (málo bitov na čip).</p>
+          <p><strong>Použitie:</strong> Cache pamäť L1/L2/L3 v procesoroch, registre, buffer v sieťových zariadeniach.</p>
+        </div>
+        <div class="card" style="margin-bottom:0;">
+          <h4>🔄 Dynamická pamäť (DRAM)</h4>
+          <p>Každý bit je uložený v <strong>kondenzátore</strong> (1 tranzistor + 1 kondenzátor). Kondenzátor sa pomaly vybíja, preto treba obsah pravidelne obnovovať (refresh každých ~64 ms).</p>
+          <p><strong>Vlastnosti:</strong> Pomalšia ako SRAM (~50–100 ns), lacnejšia, vysoká hustota (veľká kapacita na čip).</p>
+          <p><strong>Použitie:</strong> Hlavná operačná pamäť počítača (DDR4, DDR5), pamäť grafických kariet (GDDR6).</p>
+        </div>
+      </div>
+      <div class="card" style="margin-top:14px;">
+        <h4>Zhrnutie rozdielov</h4>
+        <p><strong>SRAM</strong> je rýchlejšia, ale drahšia a s menšou kapacitou – preto sa používa len pre malé, kriticky rýchle pamäte (cache). <strong>DRAM</strong> je pomalšia, lacnejšia a s veľkou kapacitou – preto tvorí hlavnú pamäť RAM v každom počítači.</p>
+      </div>
+    </div>
+
+    <!-- 3a -->
+    <div class="uloha-block" id="t11-3a">
+      <div class="uloha-label">📌 3a</div>
+      <h3>Prevody jednotiek pamäte + výpočty</h3>
+      <div class="card">
+        <h4>Pravidlá prevodu</h4>
+        <p>Každá vyššia jednotka je <strong>1 024×</strong> väčšia ako nižšia (nie 1000 – počítače pracujú binárne):</p>
+        <p>1 TB = 1 024 GB &nbsp;|&nbsp; 1 GB = 1 024 MB &nbsp;|&nbsp; 1 MB = 1 024 kB &nbsp;|&nbsp; 1 kB = 1 024 B &nbsp;|&nbsp; 1 B = 8 b</p>
+        <p><strong>Pri prevode na nižšiu jednotku → násobíme 1 024</strong> (alebo ×8 pri B→b)</p>
+        <p><strong>Pri prevode na vyššiu jednotku → delíme 1 024</strong></p>
+      </div>
+      <div class="two-col">
+        <div class="card" style="margin-bottom:0;">
+          <h4>📐 Výpočet: 7 TB = ? kB</h4>
+          <div style="font-family:monospace; font-size:0.88rem; background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:14px; margin-top:8px; line-height:2.2;">
+            7 TB × 1 024 = 7 168 GB<br>
+            7 168 GB × 1 024 = 7 340 032 MB<br>
+            7 340 032 MB × 1 024 = <strong>7 516 192 768 kB</strong>
+          </div>
+          <p style="margin-top:10px;"><strong>7 TB = 7 516 192 768 kB</strong></p>
+        </div>
+        <div class="card" style="margin-bottom:0;">
+          <h4>📐 Výpočet: 7 MB = ? b</h4>
+          <div style="font-family:monospace; font-size:0.88rem; background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:14px; margin-top:8px; line-height:2.2;">
+            7 MB × 1 024 = 7 168 kB<br>
+            7 168 kB × 1 024 = 7 340 032 B<br>
+            7 340 032 B × 8 = <strong>58 720 256 b</strong>
+          </div>
+          <p style="margin-top:10px;"><strong>7 MB = 58 720 256 b</strong></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3b -->
+    <div class="uloha-block" id="t11-3b">
+      <div class="uloha-label">📌 3b</div>
+      <h3>Analýza ceny pamäťových médií</h3>
+      <div class="ip-table-wrap">
+        <table class="ip">
+          <thead>
+            <tr><th>Médium</th><th>Typ</th><th>Typická kapacita</th><th>Orientačná cena/GB</th><th>Poznámka</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>HDD</strong></td>
+              <td>Magnetický disk</td>
+              <td>1–20 TB</td>
+              <td>~0,02 €/GB</td>
+              <td>Najlacnejšie úložisko na GB, ale pomalé a mechanické</td>
+            </tr>
+            <tr>
+              <td><strong>CD</strong></td>
+              <td>Optický disk</td>
+              <td>700 MB</td>
+              <td>~0,10 €/GB</td>
+              <td>Zastaraný formát, veľmi malá kapacita, lacný nosič</td>
+            </tr>
+            <tr>
+              <td><strong>DVD</strong></td>
+              <td>Optický disk</td>
+              <td>4,7 – 8,5 GB</td>
+              <td>~0,05 €/GB</td>
+              <td>Stále používaný, lacný, ale pomalý prístup</td>
+            </tr>
+            <tr>
+              <td><strong>SSD</strong></td>
+              <td>Flash pamäť</td>
+              <td>250 GB – 4 TB</td>
+              <td>~0,08–0,15 €/GB</td>
+              <td>Rýchle, spoľahlivé, bez pohyblivých častí, drahšie ako HDD</td>
+            </tr>
+            <tr>
+              <td><strong>DDR (RAM)</strong></td>
+              <td>DRAM operačná pamäť</td>
+              <td>8–128 GB</td>
+              <td>~3–8 €/GB</td>
+              <td>Najdrahšie na GB – volatilná, ale extrémne rýchla pamäť</td>
+            </tr>
+            <tr>
+              <td><strong>Flash (USB/SD)</strong></td>
+              <td>Flash pamäť</td>
+              <td>8 GB – 2 TB</td>
+              <td>~0,10–0,30 €/GB</td>
+              <td>Prenosné, praktické, pomalšie ako SSD</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- 3c -->
+    <div class="uloha-block" id="t11-3c">
+      <div class="uloha-label">📌 3c</div>
+      <h3>Faktory ovplyvňujúce cenu výrobku</h3>
+      <div class="components-grid">
+        <div class="comp-card"><div class="comp-icon icon-active">🏭</div><div><div class="name">Výrobné náklady</div><div class="desc">Cena materiálu, výrobného procesu a technológie – napr. 5nm čip je drahší na výrobu ako 14nm</div></div></div>
+        <div class="comp-card"><div class="comp-icon icon-active">📦</div><div><div class="name">Ponuka a dopyt</div><div class="desc">Vysoký dopyt pri nedostatočnej ponuke zvyšuje cenu (napr. nedostatok čipov 2021–2022)</div></div></div>
+        <div class="comp-card"><div class="comp-icon icon-active">🔬</div><div><div class="name">Technológia a výskum</div><div class="desc">Výdavky na R&D (výskum a vývoj) sa premietajú do ceny produktu – nové technológie sú drahšie</div></div></div>
+        <div class="comp-card"><div class="comp-icon icon-active">🏆</div><div><div class="name">Konkurencia</div><div class="desc">Väčšia konkurencia na trhu znižuje ceny – monopol alebo duopol udržiava vyššie ceny</div></div></div>
+        <div class="comp-card"><div class="comp-icon icon-active">🌍</div><div><div class="name">Logistika a distribúcia</div><div class="desc">Náklady na prepravu, skladovanie a distribučnú sieť sa premietajú do koncovej ceny</div></div></div>
+        <div class="comp-card"><div class="comp-icon icon-active">📋</div><div><div class="name">Licencie a patenty</div><div class="desc">Platenie licenčných poplatkov za patentované technológie zvyšuje výrobné náklady</div></div></div>
+        <div class="comp-card"><div class="comp-icon icon-active">⚙️</div><div><div class="name">Výťažnosť výroby</div><div class="desc">Percento funkčných čipov z wafera – nižšia výťažnosť = menej kusov = vyššia cena</div></div></div>
+        <div class="comp-card"><div class="comp-icon icon-active">💹</div><div><div class="name">Kurzové a ekonomické vplyvy</div><div class="desc">Výkyvy mien, inflácia, ceny energií a surovín ovplyvňujú výrobné náklady globálne</div></div></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ===================== TÉMA 12 ===================== -->
+  <div class="tema-block" id="tema12">
+    <div class="tema-header">
+      <div class="tema-number">12</div>
+      <div class="tema-header-text">
+        <h2>Pevné disky, optické médiá & RAID</h2>
+        <p>Stavba HDD, partície, CD/DVD, SSD, Flash, diskové polia RAID</p>
+      </div>
+    </div>
+
+    <!-- 1a -->
+    <div class="uloha-block" id="t12-1a">
+      <div class="uloha-label">📌 1a</div>
+      <h3>Základné časti pevného disku</h3>
+      <div class="definition-box">
+        <strong>Pevný disk (HDD – Hard Disk Drive)</strong> je magnetické úložné zariadenie na trvalé ukladanie dát. Skladá sa z niekoľkých mechanických a elektronických častí, ktoré spolupracujú pri čítaní a zápise dát.
+      </div>
+      <div class="components-grid">
+        <div class="comp-card"><div class="comp-icon icon-active">💿</div><div><div class="name">Platňa (platter)</div><div class="desc">Kruhový kovový alebo sklenený disk pokrytý magnetickou vrstvou – na ňu sa zapisujú dáta. HDD má 1–5 platní.</div></div></div>
+        <div class="comp-card"><div class="comp-icon icon-active">🔩</div><div><div class="name">Vreteno (spindle)</div><div class="desc">Os, okolo ktorej sa otáčajú platne. Rýchlosť otáčania: 5 400 alebo 7 200 RPM (otáčok za minútu).</div></div></div>
+        <div class="comp-card"><div class="comp-icon icon-active">✏️</div><div><div class="name">Čítacia/zapisovacia hlava</div><div class="desc">Elektromagnetická súčiastka, ktorá číta a zapisuje dáta na magnetickú vrstvu platne. Každá strana platne má vlastnú hlavu.</div></div></div>
+        <div class="comp-card"><div class="comp-icon icon-active">🦾</div><div><div class="name">Rameno hlavy (actuator arm)</div><div class="desc">Pohybuje hlavou po polomere platne. Riadi ho hlas cievky (voice coil actuator) pre presné polohanie.</div></div></div>
+        <div class="comp-card"><div class="comp-icon icon-active">🖥️</div><div><div class="name">Riadiaca elektronika (PCB)</div><div class="desc">Doska plošných spojov na spodku disku – riadi motor, hlavy, komunikáciu s počítačom a vyrovnávaciu pamäť.</div></div></div>
+        <div class="comp-card"><div class="comp-icon icon-active">💾</div><div><div class="name">Vyrovnávacia pamäť (cache)</div><div class="desc">Rýchla DRAM pamäť (8–256 MB) na dočasné uloženie čítaných/zapisovaných dát pre zrýchlenie operácií.</div></div></div>
+        <div class="comp-card"><div class="comp-icon icon-active">🔒</div><div><div class="name">Hermeticky uzavretý kryt</div><div class="desc">Kovový kryt chráni platne pred prachom a vibráciami. Vnútro je naplnené čistým vzduchom alebo héliom.</div></div></div>
+      </div>
+    </div>
+
+    <!-- 1b -->
+    <div class="uloha-block" id="t12-1b">
+      <div class="uloha-label">📌 1b</div>
+      <h3>Základné pojmy pevných diskov</h3>
+      <div class="ip-table-wrap">
+        <table class="ip">
+          <thead>
+            <tr><th>Pojem</th><th>Definícia</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Hlava (Head)</strong></td>
+              <td>Čítacia/zapisovacia elektromagnetická súčiastka. Každá strana každej platne má vlastnú hlavu. Hlava sa pohybuje ponad povrch platne na vzduchovej vrstve hrúbky niekoľko nanometrov.</td>
+            </tr>
+            <tr>
+              <td><strong>Stopa (Track)</strong></td>
+              <td>Koncentrická kružnica na povrchu platne. Každá platňa má tisíce stôp – napr. disk s 200 000 stopami na povrch. Stopy sú číslované od okraja (0) ku stredu.</td>
+            </tr>
+            <tr>
+              <td><strong>Cylinder</strong></td>
+              <td>Súbor všetkých stôp rovnakého čísla na všetkých platniach disku. Všetky hlavy sú vždy na rovnakom čísle stopy → tvoria cylinder. Dôležité pri adresovaní dát.</td>
+            </tr>
+            <tr>
+              <td><strong>Sektor (Sector)</strong></td>
+              <td>Najmenšia adresovateľná jednotka na disku. Každá stopa je rozdelená na sektory, typicky 512 B alebo 4 096 B (Advanced Format). Na sektor sa odkazuje pomocou adresy CHS alebo LBA.</td>
+            </tr>
+            <tr>
+              <td><strong>Klaster (Cluster)</strong></td>
+              <td>Skupina susedných sektorov tvoriacich najmenšiu jednotku alokácie súborového systému. Typicky 4–64 sektorov. Súbor zaberá vždy celý počet klastrov – aj malý súbor zaberá minimálne 1 klaster.</td>
+            </tr>
+            <tr>
+              <td><strong>Fyzický disk</strong></td>
+              <td>Skutočné fyzické zariadenie – HDD alebo SSD pripojené k počítaču. OS ho vidí ako celok pred rozdelením na partície.</td>
+            </tr>
+            <tr>
+              <td><strong>Logický disk</strong></td>
+              <td>Virtuálny disk vytvorený rozdelením fyzického disku na partície. OS ho vidí ako samostatné jednotky (napr. C:, D:). Jeden fyzický disk môže obsahovať viacero logických diskov.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- 1c -->
+    <div class="uloha-block" id="t12-1c">
+      <div class="uloha-label">📌 1c</div>
+      <h3>Partícia – definícia a operácie</h3>
+      <div class="definition-box">
+        <strong>Partícia (oddiel)</strong> je logicky vymedzená časť fyzického disku, ktorá sa správa ako samostatný disk. Každá partícia môže mať vlastný súborový systém (NTFS, FAT32, ext4) a vlastné písmeno jednotky (C:, D:).
+      </div>
+      <div class="two-col">
+        <div class="card" style="margin-bottom:0;">
+          <h4>📋 Typy partícií</h4>
+          <p><strong>Primárna partícia</strong> – hlavná partícia, z ktorej sa dá bootovať OS. Max 4 primárne partície na disk (MBR).</p>
+          <p><strong>Rozšírená partícia</strong> – špeciálna primárna partícia obsahujúca logické disky. Max 1 na disk.</p>
+          <p><strong>Logická partícia</strong> – vytvorená v rámci rozšírenej partície. Môže ich byť neobmedzene.</p>
+          <p><strong>GPT partícia</strong> – moderný štandard (UEFI), až 128 partícií, podporuje disky nad 2 TB.</p>
+        </div>
+        <div class="card" style="margin-bottom:0;">
+          <h4>⚙️ Operácie s partíciami</h4>
+          <p><strong>Vytvorenie</strong> – rozdelenie voľného miesta na novú partíciu.</p>
+          <p><strong>Formátovanie</strong> – inicializácia súborového systému (NTFS, FAT32, ext4) na partícii.</p>
+          <p><strong>Zmena veľkosti</strong> – zmenšenie alebo zväčšenie existujúcej partície (napr. GParted).</p>
+          <p><strong>Zlúčenie</strong> – spojenie dvoch susedných partícií do jednej.</p>
+          <p><strong>Odstránenie</strong> – vymazanie partície a uvoľnenie miesta.</p>
+          <p><strong>Klonovanie</strong> – kopírovanie celej partície na iný disk.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2a -->
+    <div class="uloha-block" id="t12-2a">
+      <div class="uloha-label">📌 2a</div>
+      <h3>Charakteristiky pevných diskov</h3>
+      <div class="components-grid">
+        <div class="comp-card"><div class="comp-icon icon-active">📦</div><div><div class="name">Kapacita</div><div class="desc">Množstvo dát ktoré disk pojme – dnes typicky 500 GB až 20 TB pre bežné HDD</div></div></div>
+        <div class="comp-card"><div class="comp-icon icon-active">⏱️</div><div><div class="name">Prístupová doba</div><div class="desc">Čas potrebný na nájdenie a prečítanie dát – typicky 5–15 ms pre HDD</div></div></div>
+        <div class="comp-card"><div class="comp-icon icon-active">🔄</div><div><div class="name">Rýchlosť otáčania</div><div class="desc">5 400 RPM (úsporné) alebo 7 200 RPM (výkonné) – vyššie RPM = rýchlejší prístup</div></div></div>
+        <div class="comp-card"><div class="comp-icon icon-active">📡</div><div><div class="name">Prenosová rýchlosť</div><div class="desc">Sequential read/write – typicky 100–250 MB/s pre HDD, závisí od hustoty záznamu</div></div></div>
+        <div class="comp-card"><div class="comp-icon icon-active">💾</div><div><div class="name">Veľkosť cache</div><div class="desc">Vyrovnávacia pamäť 8–256 MB – väčšia cache zlepšuje výkon pri opakovanom prístupe</div></div></div>
+        <div class="comp-card"><div class="comp-icon icon-active">📐</div><div><div class="name">Formát (rozmer)</div><div class="desc">3,5" pre stolné PC, 2,5" pre notebooky a externé disky</div></div></div>
+        <div class="comp-card"><div class="comp-icon icon-active">🔌</div><div><div class="name">Rozhranie</div><div class="desc">SATA III (6 Gb/s) pre bežné HDD, SAS pre serverové disky</div></div></div>
+        <div class="comp-card"><div class="comp-icon icon-active">📊</div><div><div class="name">MTBF</div><div class="desc">Mean Time Between Failures – priemerný čas medzi poruchami, typicky 1–2 milióny hodín</div></div></div>
+      </div>
+    </div>
+
+    <!-- 2b -->
+    <div class="uloha-block" id="t12-2b">
+      <div class="uloha-label">📌 2b</div>
+      <h3>Spôsoby pripojenia pevných diskov</h3>
+      <div class="ip-table-wrap">
+        <table class="ip">
+          <thead>
+            <tr><th>Rozhranie</th><th>Rýchlosť</th><th>Použitie</th><th>Poznámka</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>SATA I</strong></td><td>150 MB/s</td><td>Staršie HDD/SSD</td><td>Prvá generácia SATA, sériové rozhranie</td></tr>
+            <tr><td><strong>SATA II</strong></td><td>300 MB/s</td><td>HDD, staršie SSD</td><td>Najčastejšie pre bežné HDD</td></tr>
+            <tr><td><strong>SATA III</strong></td><td>600 MB/s</td><td>HDD, SATA SSD</td><td>Aktuálny štandard, spätne kompatibilný</td></tr>
+            <tr><td><strong>NVMe (PCIe)</strong></td><td>až 7 000 MB/s</td><td>M.2 SSD</td><td>Najrýchlejšie pripojenie pre SSD, priamo cez PCIe</td></tr>
+            <tr><td><strong>USB</strong></td><td>až 40 Gbps</td><td>Externé disky</td><td>USB 3.0/3.1/3.2/4 – prenosné disky</td></tr>
+            <tr><td><strong>SAS</strong></td><td>až 22,5 Gbps</td><td>Serverové disky</td><td>Serial Attached SCSI – spoľahlivé, drahé</td></tr>
+            <tr><td><strong>IDE/PATA</strong></td><td>133 MB/s</td><td>Staré PC</td><td>Zastaraný paralelný štandard, dnes nepoužívaný</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- 2c -->
+    <div class="uloha-block" id="t12-2c">
+      <div class="uloha-label">📌 2c</div>
+      <h3>CD a DVD disk – anatómia a činnosť</h3>
+      <div class="two-col">
+        <div class="card" style="margin-bottom:0;">
+          <h4>💿 CD disk</h4>
+          <p><strong>Kapacita:</strong> 650–700 MB &nbsp;|&nbsp; <strong>Priemer:</strong> 120 mm</p>
+          <p><strong>Stavba:</strong> Polykarbonátový základ s reflexnou vrstvou (hliník) a ochranným lakom. Dáta sú uložené ako séria <strong>pitov</strong> (priehlbín) a <strong>landov</strong> (rovných plôch) na špirálnej stope.</p>
+          <p><strong>Čítanie:</strong> Laserový lúč (vlnová dĺžka 780 nm – infračervený) svieti na povrch. Pit rozptyľuje svetlo inak ako land – fotodetektor registruje zmeny a dekóduje bity.</p>
+          <p><strong>Typy:</strong> CD-ROM (len čítanie), CD-R (jednorázový zápis), CD-RW (prepisovateľný).</p>
+        </div>
+        <div class="card" style="margin-bottom:0;">
+          <h4>📀 DVD disk</h4>
+          <p><strong>Kapacita:</strong> 4,7 GB (single layer) až 17 GB (dual layer, double sided) &nbsp;|&nbsp; <strong>Priemer:</strong> 120 mm</p>
+          <p><strong>Stavba:</strong> Podobná CD, ale pity sú menšie a husto rozmiestnené. Môže mať 1 alebo 2 vrstvy záznamu na každej strane disku.</p>
+          <p><strong>Čítanie:</strong> Laserový lúč s kratšou vlnovou dĺžkou (650 nm – červený) umožňuje čítanie menších pitov → vyššia kapacita.</p>
+          <p><strong>Typy:</strong> DVD-ROM, DVD-R, DVD+R, DVD-RW, DVD+RW, DVD-RAM.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2d -->
+    <div class="uloha-block" id="t12-2d">
+      <div class="uloha-label">📌 2d</div>
+      <h3>Externé pamäťové médiá: SSD a Flash pamäte</h3>
+      <div class="sustava-grid">
+        <div class="sustava-card">
+          <span class="s-badge s-bin">Moderné úložisko</span>
+          <h4>SSD (Solid State Drive)</h4>
+          <p>Úložné zariadenie bez pohyblivých mechanických častí. Dáta sú uložené vo flash pamäťových čipoch (NAND Flash).</p>
+          <p><strong>Výhody:</strong> Extrémne rýchle (až 7 000 MB/s pre NVMe), tichá prevádzka, odolné voči otrasom, nízka spotreba energie, malé rozmery (M.2).</p>
+          <p><strong>Nevýhody:</strong> Drahšie na GB ako HDD, obmedzený počet zápisových cyklov (TBW – TeraBytes Written).</p>
+        </div>
+        <div class="sustava-card">
+          <span class="s-badge s-dec">Prenosné médium</span>
+          <h4>USB Flash disk</h4>
+          <p>Prenosné úložné zariadenie s NAND Flash pamäťou a USB rozhraním. Kapacita 8 GB – 2 TB.</p>
+          <p><strong>Výhody:</strong> Malé, ľahké, prenosné, nevyžaduje napájanie, kompatibilné s každým PC.</p>
+          <p><strong>Nevýhody:</strong> Pomalšie ako SSD, ľahko sa stratí, obmedzená životnosť pri intenzívnom zápise.</p>
+        </div>
+        <div class="sustava-card">
+          <span class="s-badge s-hex">Prenosné médium</span>
+          <h4>SD / microSD karta</h4>
+          <p>Kompaktná flash pamäť vo forme karty. Kapacita 2 GB – 2 TB. Kategórie: SDSC, SDHC, SDXC.</p>
+          <p><strong>Výhody:</strong> Veľmi malé rozmery, vhodné pre fotoaparáty, telefóny, tablety, Raspberry Pi.</p>
+          <p><strong>Nevýhody:</strong> Krehké, pomalšie ako SSD, rôzne triedy rýchlosti (Class 2–10, UHS).</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3a -->
+    <div class="uloha-block" id="t12-3a">
+      <div class="uloha-label">📌 3a</div>
+      <h3>Diskové polia RAID-0 a RAID-1</h3>
+      <div class="definition-box">
+        <strong>RAID</strong> (Redundant Array of Independent Disks) je technológia spájania viacerých fyzických diskov do jedného logického celku pre zvýšenie výkonu, kapacity alebo spoľahlivosti.
+      </div>
+      <div class="two-col">
+        <div class="card" style="margin-bottom:0;">
+          <h4>⚡ RAID-0 – Striped Set (Prekladaná sada)</h4>
+          <p>Dáta sú rozdelené na bloky (stripy) a striedavo zapisované na <strong>všetky disky súčasne</strong>. Minimálne 2 disky.</p>
+          <p><strong>Kapacita:</strong> Súčet kapacít všetkých diskov (2× 1 TB = 2 TB).</p>
+          <p><strong>Rýchlosť:</strong> Výrazne vyššia ako jeden disk – čítanie aj zápis prebieha paralelne.</p>
+          <p><strong>Bezpečnosť:</strong> ❌ Žiadna redundancia – ak vypadne jeden disk, stratia sa VŠETKY dáta. Riziko je vyššie ako pri jednom disku.</p>
+          <p><strong>Použitie:</strong> Video strih, hry, dočasné pracovné súbory – kde je výkon dôležitejší ako bezpečnosť.</p>
+        </div>
+        <div class="card" style="margin-bottom:0;">
+          <h4>🛡️ RAID-1 – Mirrored Set (Zrkadlená sada)</h4>
+          <p>Dáta sú <strong>identicky kopírované na všetky disky</strong> súčasne (zrkadlenie). Minimálne 2 disky.</p>
+          <p><strong>Kapacita:</strong> Len kapacita jedného disku (2× 1 TB = 1 TB použiteľných).</p>
+          <p><strong>Rýchlosť:</strong> Čítanie môže byť rýchlejšie (z oboch diskov), zápis rovnaký ako jeden disk.</p>
+          <p><strong>Bezpečnosť:</strong> ✅ Vysoká – ak vypadne jeden disk, druhý obsahuje plnú kópiu dát. Systém funguje ďalej.</p>
+          <p><strong>Použitie:</strong> Servery, databázy, systémy kde je spoľahlivosť kľúčová.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3b -->
+    <div class="uloha-block" id="t12-3b">
+      <div class="uloha-label">📌 3b</div>
+      <h3>Prínosy diskových polí z hľadiska bezpečnosti a ekonomiky</h3>
+      <div class="two-col">
+        <div class="card" style="margin-bottom:0;">
+          <h4>🔒 Bezpečnostné prínosy</h4>
+          <p><strong>Ochrana pred výpadkom disku (RAID-1, RAID-5, RAID-6):</strong> Pri poruche jedného disku systém pokračuje v prevádzke bez straty dát. Vypadnutý disk sa môže vymeniť za chodu (hot-swap).</p>
+          <p><strong>Redundancia:</strong> Kritické systémy (banky, nemocnice, servery) nemôžu stratiť dáta – RAID zabezpečuje nepretržitú dostupnosť.</p>
+          <p><strong>RAID nie je záloha!</strong> RAID chráni pred výpadkom hardware, nie pred zmazaním súborov, vírusom alebo požiarom – záloha je stále nutná.</p>
+        </div>
+        <div class="card" style="margin-bottom:0;">
+          <h4>💶 Ekonomické prínosy</h4>
+          <p><strong>RAID-0:</strong> Ekonomicky výhodný – plná kapacita, výrazne vyšší výkon bez nutnosti kupovať drahší disk.</p>
+          <p><strong>RAID-1:</strong> Vyššie náklady (platíte za 2 disky, použijete 1), ale ušetríte za výpadky systému a obnovu dát – výpadok servera môže stáť tisíce € za hodinu.</p>
+          <p><strong>RAID-5/6:</strong> Kompromis – dobrý výkon, redundancia s menšou stratou kapacity ako RAID-1.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3c -->
+    <div class="uloha-block" id="t12-3c">
+      <div class="uloha-label">📌 3c</div>
+      <h3>Porovnanie médií na uchovávanie informácií – ekonomická efektívnosť</h3>
+      <div class="ip-table-wrap">
+        <table class="ip">
+          <thead>
+            <tr><th>Médium</th><th>Kapacita</th><th>Cena/GB</th><th>Rýchlosť</th><th>Životnosť</th><th>Vhodnosť</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>HDD</strong></td>
+              <td>1–20 TB</td>
+              <td>~0,02 €/GB</td>
+              <td>100–250 MB/s</td>
+              <td>3–5 rokov</td>
+              <td>Archivácia, zálohy, NAS</td>
+            </tr>
+            <tr>
+              <td><strong>SSD (SATA)</strong></td>
+              <td>250 GB–4 TB</td>
+              <td>~0,08 €/GB</td>
+              <td>500–550 MB/s</td>
+              <td>5–10 rokov</td>
+              <td>Systémový disk, rýchla práca</td>
+            </tr>
+            <tr>
+              <td><strong>SSD (NVMe)</strong></td>
+              <td>250 GB–4 TB</td>
+              <td>~0,10 €/GB</td>
+              <td>3 000–7 000 MB/s</td>
+              <td>5–10 rokov</td>
+              <td>Profesionálna práca, hry</td>
+            </tr>
+            <tr>
+              <td><strong>USB Flash</strong></td>
+              <td>8 GB–2 TB</td>
+              <td>~0,15–0,30 €/GB</td>
+              <td>30–400 MB/s</td>
+              <td>2–5 rokov</td>
+              <td>Prenosné dáta, zdieľanie</td>
+            </tr>
+            <tr>
+              <td><strong>CD</strong></td>
+              <td>700 MB</td>
+              <td>~0,10 €/GB</td>
+              <td>1–8 MB/s</td>
+              <td>10–25 rokov</td>
+              <td>Archivácia, distribúcia softvéru</td>
+            </tr>
+            <tr>
+              <td><strong>DVD</strong></td>
+              <td>4,7–17 GB</td>
+              <td>~0,05 €/GB</td>
+              <td>5–20 MB/s</td>
+              <td>10–25 rokov</td>
+              <td>Filmy, zálohy, distribúcia</td>
+            </tr>
+            <tr>
+              <td><strong>Páska (LTO)</strong></td>
+              <td>až 45 TB</td>
+              <td>~0,005 €/GB</td>
+              <td>400 MB/s (seq.)</td>
+              <td>30+ rokov</td>
+              <td>Dlhodobá archivácia, dátové centrá</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="card" style="margin-top:14px;">
+        <h4>Záver – čo je ekonomicky najefektívnejšie?</h4>
+        <p>Pre <strong>bežného používateľa</strong> je najlepšia kombinácia <em>SSD ako systémový disk + HDD pre úložisko</em> – rýchlosť tam kde treba a nízka cena za GB pre veľké dáta. Pre <strong>dlhodobú archiváciu</strong> sú najlacnejšie pásky LTO alebo optické disky. Pre <strong>prenosnosť</strong> je ideálny USB flash. Čisto ekonomicky na GB je HDD stále najlacnejšie spomedzi bežne dostupných médií.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ===================== TÉMA 13 ===================== -->
+  <div class="tema-block" id="tema13">
+    <div class="tema-header">
+      <div class="tema-number">13</div>
+      <div class="tema-header-text">
+        <h2>Elektrické siete, napätie & BOZP</h2>
+        <p>Jednosmerný/striedavý prúd, rozvodné siete TN, ochrana pred úrazom, prvá pomoc</p>
+      </div>
+    </div>
+
+    <!-- 1a -->
+    <div class="uloha-block" id="t13-1a">
+      <div class="uloha-label">📌 1a</div>
+      <h3>Jednosmerný a striedavý prúd</h3>
+      <div class="two-col">
+        <div class="card" style="margin-bottom:0;">
+          <h4>⚡ Jednosmerný prúd (DC – Direct Current)</h4>
+          <p>Elektrický prúd, ktorý tečie stále <strong>v jednom smere</strong>. Napätie je konštantné alebo sa mení, ale znamienko (polarita) zostáva rovnaké.</p>
+          <p><strong>Charakteristika:</strong> Stála polarita (+ a −), konštantná hodnota napätia. Graficky sa zobrazuje ako vodorovná priamka.</p>
+          <p><strong>Príklady:</strong> Batérie, akumulátory, solárne články, napájacie adaptéry, elektronické obvody.</p>
+          <p><strong>Použitie:</strong> Napájanie elektroniky, nabíjanie batérií, elektrolýza, elektrická trakcia (metro, električka).</p>
+        </div>
+        <div class="card" style="margin-bottom:0;">
+          <h4>〜 Striedavý prúd (AC – Alternating Current)</h4>
+          <p>Elektrický prúd, ktorý <strong>pravidelne mení smer</strong> a veľkosť. Napätie sa mení podľa sínusovej funkcie.</p>
+          <p><strong>Charakteristika:</strong> Frekvencia 50 Hz (v SR) – 50 zmien smeru za sekundu. Graficky sínusový priebeh.</p>
+          <p><strong>Príklady:</strong> Elektrická rozvodná sieť 230 V / 50 Hz, generátory, transformátory.</p>
+          <p><strong>Použitie:</strong> Rozvod elektrickej energie na veľké vzdialenosti (nízke straty pri vysokom napätí), napájanie spotrebičov v domácnosti.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 1b -->
+    <div class="uloha-block" id="t13-1b">
+      <div class="uloha-label">📌 1b</div>
+      <h3>Fázové a združené napätie – definície a efektívne hodnoty</h3>
+      <div class="two-col">
+        <div class="card" style="margin-bottom:0;">
+          <h4>🔌 Fázové napätie (U<sub>f</sub>)</h4>
+          <p><strong>Definícia:</strong> Napätie medzi <strong>fázovým vodičom (L) a nulovým vodičom (N)</strong> alebo zemou. Je to napätie, ktoré je dostupné v bežnej elektrickej zásuvke.</p>
+          <p><strong>Efektívna hodnota v SR:</strong> <code>U<sub>f</sub> = 230 V</code></p>
+          <p>Maximálna (amplitúdová) hodnota: U<sub>max</sub> = 230 × √2 ≈ 325 V</p>
+          <p><strong>Použitie:</strong> Bežné domáce spotrebiče – žiarovky, televízory, počítače, nabíjačky.</p>
+        </div>
+        <div class="card" style="margin-bottom:0;">
+          <h4>⚡ Združené napätie (U<sub>s</sub>)</h4>
+          <p><strong>Definícia:</strong> Napätie medzi <strong>dvoma fázovými vodičmi (L1 a L2)</strong> trojfázovej siete. Je to napätie medzi dvoma fázami.</p>
+          <p><strong>Efektívna hodnota v SR:</strong> <code>U<sub>s</sub> = 400 V</code></p>
+          <p>Vzťah: U<sub>s</sub> = U<sub>f</sub> × √3 = 230 × 1,732 ≈ 400 V</p>
+          <p><strong>Použitie:</strong> Trojfázové spotrebiče – elektromotory, priemyselné zariadenia, elektrické rúry, klimatizácie.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 1c -->
+    <div class="uloha-block" id="t13-1c">
+      <div class="uloha-label">📌 1c</div>
+      <h3>Označenie a značky pre jednosmerný a striedavý prúd</h3>
+      <div class="ip-table-wrap">
+        <table class="ip">
+          <thead>
+            <tr><th>Typ prúdu</th><th>Skratka</th><th>Grafická značka</th><th>Príklad použitia značky</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Jednosmerný prúd</strong></td>
+              <td>DC (angl.) / SS (slov.)</td>
+              <td style="font-family:monospace; font-size:1.1rem;"><strong>⎓</strong> alebo <strong>—</strong> (vodorovná čiara)</td>
+              <td>Na adaptéroch, batériách, nabíjačkách, elektrických schémach</td>
+            </tr>
+            <tr>
+              <td><strong>Striedavý prúd</strong></td>
+              <td>AC (angl.) / SS (slov.)</td>
+              <td style="font-family:monospace; font-size:1.1rem;"><strong>〜</strong> alebo <strong>∿</strong> (vlnovka/sínusoida)</td>
+              <td>Na spotrebičoch, zásuvkách, transformátoroch, elektromeroch</td>
+            </tr>
+            <tr>
+              <td><strong>Trojfázový striedavý</strong></td>
+              <td>3AC / 3∿</td>
+              <td style="font-family:monospace; font-size:1.1rem;"><strong>3∿</strong></td>
+              <td>Na priemyselných zariadeniach, motoroch, rozvádzačoch</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- 2a -->
+    <div class="uloha-block" id="t13-2a">
+      <div class="uloha-label">📌 2a</div>
+      <h3>Rozvodné siete TN-S a TN-C</h3>
+      <div class="definition-box">
+        Rozvodné siete sú označované podľa normy IEC 60364. <strong>T</strong> = Terra (uzemnenie), <strong>N</strong> = Neutral (nulový vodič), <strong>S</strong> = Separated (oddelený), <strong>C</strong> = Combined (kombinovaný).
+      </div>
+      <div class="two-col">
+        <div class="card" style="margin-bottom:0;">
+          <h4>🟢 Sieť TN-S</h4>
+          <p><strong>TN-S</strong> = Terre Neutre Séparé – nulový vodič <strong>N</strong> a ochranný vodič <strong>PE</strong> sú <em>oddelené po celej trase</em>.</p>
+          <p><strong>Vodiče:</strong> L1, L2, L3 (fázy), N (nulový), PE (ochranný zemnič) – spolu 5 vodičov.</p>
+          <p><strong>Výhody:</strong> Vyššia bezpečnosť – PE vodič nenesie prevádzkový prúd, znižuje riziko úrazu elektrickým prúdom pri poruche.</p>
+          <p><strong>Použitie:</strong> Moderné bytové a priemyselné inštalácie, odporúčaný štandard pre nové stavby.</p>
+          <div style="font-family:monospace; font-size:0.82rem; background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:10px; margin-top:10px; line-height:1.8;">
+            L1 ──────── spotrebič<br>
+            L2 ──────── spotrebič<br>
+            L3 ──────── spotrebič<br>
+            N &nbsp;──────── nulový bod<br>
+            PE ──────── ochranný zemniaci vodič
+          </div>
+        </div>
+        <div class="card" style="margin-bottom:0;">
+          <h4>🟡 Sieť TN-C</h4>
+          <p><strong>TN-C</strong> = Terre Neutre Combiné – nulový vodič N a ochranný vodič PE sú <em>spojené do jedného vodiča</em> <strong>PEN</strong>.</p>
+          <p><strong>Vodiče:</strong> L1, L2, L3 (fázy), PEN (kombinovaný nulový + ochranný) – spolu 4 vodiče.</p>
+          <p><strong>Nevýhody:</strong> Nižšia bezpečnosť – PEN vodič nesie prevádzkový prúd, pri prerušení PEN môžu byť kovové časti pod napätím.</p>
+          <p><strong>Použitie:</strong> Staršie inštalácie, priemyselné rozvody, prívod do budovy (pred rozvádzačom).</p>
+          <div style="font-family:monospace; font-size:0.82rem; background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:10px; margin-top:10px; line-height:1.8;">
+            L1 &nbsp;──────── spotrebič<br>
+            L2 &nbsp;──────── spotrebič<br>
+            L3 &nbsp;──────── spotrebič<br>
+            PEN ─────── nulový bod + zem
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2b -->
+    <div class="uloha-block" id="t13-2b">
+      <div class="uloha-label">📌 2b</div>
+      <h3>Poistky, ističe, izolátory, uzemnenie</h3>
+      <div class="components-grid">
+        <div class="comp-card"><div class="comp-icon icon-passive">🔥</div><div><div class="name">Poistka</div><div class="desc">Chráni obvod pred nadprúdom – pri prekročení menovitého prúdu sa tavenina roztaví a preruší obvod. Jednorazová – po vyhorení sa musí vymeniť. Typy: skrutkové (E27), nožové.</div></div></div>
+        <div class="comp-card"><div class="comp-icon icon-active">⚡</div><div><div class="name">Istič (circuit breaker)</div><div class="desc">Automatický vypínač chrániaci pred nadprúdom a skratom. Na rozdiel od poistky je opakovateľne resetovateľný – stačí ho vypnúť a znovu zapnúť. Typy B, C, D podľa charakteristiky vypnutia.</div></div></div>
+        <div class="comp-card"><div class="comp-icon icon-passive">🛡️</div><div><div class="name">Izolátor</div><div class="desc">Materiál alebo súčiastka s vysokým elektrickým odporom zabraňujúca prechodu prúdu. Chráni pred náhodným dotykom s vodičom. Materiály: plast, guma, keramika, sklo.</div></div></div>
+        <div class="comp-card"><div class="comp-icon icon-active">🌍</div><div><div class="name">Uzemnenie (PE)</div><div class="desc">Spojenie kovových častí spotrebiča so zemou vodičom PE. Pri poruche (fáza sa dotkne krytu) tečie skratový prúd do zeme → istič vypne obvod. Chráni pred dotykovým napätím.</div></div></div>
+      </div>
+    </div>
+
+    <!-- 2c -->
+    <div class="uloha-block" id="t13-2c">
+      <div class="uloha-label">📌 2c</div>
+      <h3>Rozdiel PE a PEN vodiča</h3>
+      <div class="two-col">
+        <div class="card" style="margin-bottom:0;">
+          <h4>🟢 Vodič PE (Protective Earth)</h4>
+          <p><strong>PE</strong> je čisto <strong>ochranný zemniaci vodič</strong>. V normálnej prevádzke ním netečie žiadny prúd – plní funkciu len pri poruche (skrate na kostru).</p>
+          <p><strong>Označenie:</strong> Zelenožltý pruh (zelená + žltá farba).</p>
+          <p>Používa sa v sieti <strong>TN-S</strong> – oddelený od nulového vodiča N. Bezpečnejšie riešenie.</p>
+        </div>
+        <div class="card" style="margin-bottom:0;">
+          <h4>🟡 Vodič PEN (Protective Earth Neutral)</h4>
+          <p><strong>PEN</strong> je <strong>kombinovaný vodič</strong> – plní súčasne funkciu nulového vodiča N (vracia prevádzkový prúd) aj ochranného vodiča PE (uzemnenie).</p>
+          <p><strong>Označenie:</strong> Svetlomodrá farba s zelenožltými pruhmi na koncoch.</p>
+          <p>Používa sa v sieti <strong>TN-C</strong>. Menej bezpečné – pri prerušení PEN vodiča sa kostra spotrebiča môže ocitnúť pod fázovým napätím.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2d -->
+    <div class="uloha-block" id="t13-2d">
+      <div class="uloha-label">📌 2d</div>
+      <h3>Možnosti zásahu elektrickým prúdom dotykom a bez dotyku</h3>
+      <div class="two-col">
+        <div class="card" style="margin-bottom:0;">
+          <h4>✋ Zásah dotykom</h4>
+          <p><strong>Priamy dotyk</strong> – osoba sa dotkne živých (pod napätím) častí elektrického obvodu – vodiča, svorky, nekrytého kontaktu.</p>
+          <p><strong>Nepriamy dotyk</strong> – osoba sa dotkne kovových častí zariadenia, ktoré sa dostali pod napätie v dôsledku poruchy izolácie (napr. kostra práčky pri poruche).</p>
+          <p><strong>Dotyk dvoma bodmi</strong> – osoba sa súčasne dotkne dvoch vodičov s rôznym potenciálom (napr. fáza + nula) → prúd tečie cez telo.</p>
+        </div>
+        <div class="card" style="margin-bottom:0;">
+          <h4>⚡ Zásah bez dotyku</h4>
+          <p><strong>Krokovým napätím</strong> – pri páde vysokonapäťového vodiča na zem vzniká napätie medzi dvoma miestami na zemi. Osoby stojace nohami v rôznej vzdialenosti od miesta pádu sú zasiahnuté (nebezpečné najmä pri vysokom napätí).</p>
+          <p><strong>Oblúkovým výbojom</strong> – pri práci v blízkosti vysokého napätia môže vzniknúť elektrický oblúk (iskra), ktorý zasiahne osobu bez priameho dotyku. Nebezpečné aj tepelným žiarením oblúka.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3a -->
+    <div class="uloha-block" id="t13-3a">
+      <div class="uloha-label">📌 3a</div>
+      <h3>Ochrana pred úrazom elektrickým prúdom v normálnej prevádzke</h3>
+      <div class="definition-box">
+        Ochrana pred úrazom v normálnej prevádzke = ochrana pred <strong>priamym dotykom</strong> živých častí elektrického zariadenia.
+      </div>
+      <div class="components-grid">
+        <div class="comp-card"><div class="comp-icon icon-active">🛡️</div><div><div class="name">Izolácia vodičov</div><div class="desc">Pokrytie živých vodičov izolačným materiálom (plast, guma) – základná ochrana pred dotykom</div></div></div>
+        <div class="comp-card"><div class="comp-icon icon-active">📦</div><div><div class="name">Kryty a plášte</div><div class="desc">Uzavretie živých častí do krytov (rozvádzače, zásuvky, krabice) – stupeň krytia IP (napr. IP44)</div></div></div>
+        <div class="comp-card"><div class="comp-icon icon-active">🚧</div><div><div class="name">Zábrany a ohradenie</div><div class="desc">Fyzické zábrany pri rozvádzačoch a trafostaciách zabraňujúce prístupu neoprávneným osobám</div></div></div>
+        <div class="comp-card"><div class="comp-icon icon-active">📏</div><div><div class="name">Bezpečná vzdialenosť</div><div class="desc">Dodržiavanie predpísaných ochranných pásiem pri práci v blízkosti VN a VVN vedení</div></div></div>
+        <div class="comp-card"><div class="comp-icon icon-active">🔌</div><div><div class="name">Ochranné malé napätie (SELV/PELV)</div><div class="desc">Použitie bezpečného napätia max. 50V AC alebo 120V DC – napr. záhradné LED osvetlenie, hračky</div></div></div>
+        <div class="comp-card"><div class="comp-icon icon-active">🔒</div><div><div class="name">Uzamknutie rozvádzačov</div><div class="desc">Rozvádzače a elektrické skrine musia byť uzamknuté – prístup len pre oprávnené osoby</div></div></div>
+      </div>
+    </div>
+
+    <!-- 3b -->
+    <div class="uloha-block" id="t13-3b">
+      <div class="uloha-label">📌 3b</div>
+      <h3>Prvá pomoc pri zásahu elektrickým prúdom</h3>
+      <div class="crossover-note">
+        <span>⚠️</span>
+        <div><strong>POZOR:</strong> Pred poskytnutím pomoci sa NESMIE dotknúť postihnutého pokiaľ je stále v kontakte so zdrojom prúdu – hrozí zásah zachranára!</div>
+      </div>
+      <div class="ip-table-wrap" style="margin-top:14px;">
+        <table class="ip">
+          <thead>
+            <tr><th>Krok</th><th>Postup</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="ip-class ip-a">1</span></td>
+              <td><strong>Odpojte zdroj prúdu</strong> – vypnite istič, vytiahnite zástrčku alebo odistite hlavný vypínač. Ak to nie je možné, odstrčte postihnutého od zdroja suchým nevodivým predmetom (drevená tyč, plast).</td>
+            </tr>
+            <tr>
+              <td><span class="ip-class ip-a">2</span></td>
+              <td><strong>Zavolajte záchranku</strong> – okamžite volajte 112 alebo 155. Popíšte situáciu, miesto a stav postihnutého.</td>
+            </tr>
+            <tr>
+              <td><span class="ip-class ip-b">3</span></td>
+              <td><strong>Skontrolujte stav postihnutého</strong> – overenie vedomia (oslovenie, potrasenie), dýchania a pulzu. Ak je pri vedomí – uložte ho do polohy v bezvedomí a sledujte stav.</td>
+            </tr>
+            <tr>
+              <td><span class="ip-class ip-b">4</span></td>
+              <td><strong>KPR (kardiopulmonálna resuscitácia)</strong> – ak postihnutý nedýcha a nemá pulz: 30 stlačení hrudníka + 2 vdychy. Pokračujte do príchodu záchranky alebo obnovenia dýchania.</td>
+            </tr>
+            <tr>
+              <td><span class="ip-class ip-c">5</span></td>
+              <td><strong>Ošetrenie popálenín</strong> – elektrický prúd môže spôsobiť popáleniny v miestach vstupu a výstupu. Popáleniny zakryte sterilným obväzom, nechladíme vodou pri rozsiahlych popáleninách.</td>
+            </tr>
+            <tr>
+              <td><span class="ip-class ip-c">6</span></td>
+              <td><strong>Zotavovacia poloha</strong> – ak postihnutý dýcha ale je v bezvedomí, uložte ho do stabilizovanej polohy na bok. Sledujte dýchanie až do príchodu záchranky.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- 3c -->
+    <div class="uloha-block" id="t13-3c">
+      <div class="uloha-label">📌 3c</div>
+      <h3>Možnosti skončenia pracovného pomeru pri porušení BOZP</h3>
+      <div class="definition-box">
+        <strong>BOZP</strong> (Bezpečnosť a Ochrana Zdravia pri Práci) je súbor právnych predpisov a opatrení na ochranu zdravia a bezpečnosti zamestnancov. Upravuje ho Zákonník práce (zákon č. 311/2001 Z. z.) a zákon č. 124/2006 Z. z.
+      </div>
+      <div class="sustava-grid">
+        <div class="sustava-card">
+          <span class="s-badge s-bin">Miernejší postih</span>
+          <h4>Výpoveď zo strany zamestnávateľa</h4>
+          <p>Zamestnávateľ môže dať zamestnancovi výpoveď podľa <strong>§ 63 ods. 1 písm. e) Zákonníka práce</strong> ak zamestnanec porušuje pracovnú disciplínu. Pri menej závažnom porušení musí byť zamestnanec <em>písomne upozornený</em> v posledných 6 mesiacoch.</p>
+        </div>
+        <div class="sustava-card">
+          <span class="s-badge s-hex">Závažné porušenie</span>
+          <h4>Okamžité skončenie pracovného pomeru</h4>
+          <p>Zamestnávateľ môže okamžite skončiť pracovný pomer podľa <strong>§ 68 Zákonníka práce</strong> ak zamestnanec <em>závažne porušil</em> pracovnú disciplínu. Porušenie zásad BOZP s rizikom ohrozenia života sa považuje za závažné porušenie.</p>
+        </div>
+        <div class="sustava-card">
+          <span class="s-badge s-dec">Zodpovednosť</span>
+          <h4>Náhrada škody</h4>
+          <p>Ak zamestnanec spôsobil škodu porušením BOZP, môže byť povinný nahradiť škodu zamestnávateľovi. Výška náhrady je obmedzená – max. <strong>4-násobok priemerného mesačného zárobku</strong> (pri nedbanlivosti), pri úmyselnom konaní bez obmedzenia.</p>
+        </div>
+        <div class="sustava-card">
+          <span class="s-badge s-hex">Trestnoprávne</span>
+          <h4>Trestná zodpovednosť</h4>
+          <p>Pri závažnom porušení BOZP s následkom ublíženia na zdraví alebo smrti môže byť zamestnanec trestne zodpovedný za <strong>trestný čin ohrozenia zdravia pri práci</strong> podľa Trestného zákona.</p>
+        </div>
+      </div>
+      <div class="card" style="margin-top:14px;">
+        <h4>Záver</h4>
+        <p>Porušenie zásad BOZP môže mať pre zamestnanca vážne následky – od písomného napomenutia cez výpoveď až po okamžité skončenie pracovného pomeru a trestnú zodpovednosť. Preto je dôležité dodržiavať všetky predpisy BOZP, absolvovať školenia a používať predpísané ochranné pomôcky.</p>
+      </div>
+    </div>
+
+  </div>
+
 </main>
 
 <footer>
-  Maturitné témy &nbsp;·&nbsp; Timothy Horoba 
+Maturitné Témy &nbsp;·&nbsp; Timothy Horoba
 </footer>
 
 </body>
